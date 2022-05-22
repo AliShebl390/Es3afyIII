@@ -19,12 +19,12 @@ class historyController extends Controller
         // ->select('paramedic.*', 'paramedic.name as name')->get();
         
         $All_history = DB::table('history')
-        ->join('paramedic','paramedic.id', "=" , 'history.paramidicid')
+        ->join('paramedics','paramedics.id', "=" , 'history.paramidicid')
         ->join('users','users.id', "=" , 'history.userid')
-        ->select('history.*', 'users.name as username', 'users.image as userimage', 'paramedic.name as paraname')
+        ->select('history.*', 'users.name as username', 'users.image as userimage', 'paramedics.name as paraname')
         ->get();
         // dd($All_history);
-        return view('/admin/History-main',compact('All_history'));
+        return view('/History-main',compact('All_history'));
     }
 
     public function index_1()

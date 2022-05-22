@@ -24,7 +24,7 @@ class P_AuthController extends Controller
         $para->phonenumber =$request->phonenumber;
         $file=$request->image;
         $imageName = time().'.'.$request->image->extension();  
-        $file->move(public_path('images').'/',$imageName);
+        $file->move(public_path('images/usersimgs').'/',$imageName);
         $para->image =$imageName;
         $para->password =\Hash::make($request->password);
         $save = $para->save();
@@ -57,11 +57,19 @@ class P_AuthController extends Controller
         return redirect('/');
     }
 
+    // function for shoing data at the admin's para 
+    public function index()
+    {
+        $allParamedicals = Paramedic::get();
+        return view('/home', compact('allParamedicals'));
+    }
+
+    // function for deleting data at the admin's para 
     public function delete($id)
     {
-        $oneParamedical = paramedic::find($id);
+        $oneParamedical = Paramedic::find($id);
         $oneParamedical->delete();
-        return redirect('admin/adminHome');    
+        return redirect('admin/home');
     }
 
     // function for showing data at the para's profile

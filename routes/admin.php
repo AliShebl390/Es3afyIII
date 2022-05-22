@@ -1,6 +1,10 @@
 <?php
 
 use App\Http\Controllers\Admin\A_AuthController;
+use App\Http\Controllers\getController;
+use App\Http\Controllers\userscontroller;
+use App\Http\Controllers\historycontroller;
+use App\Http\Controllers\Paramedic\P_AuthController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->middleware('theme:admin')->name('admin.')->group(function () {
@@ -13,22 +17,28 @@ Route::prefix('admin')->middleware('theme:admin')->name('admin.')->group(functio
     Route::middleware(['auth:admin'])->group(function () {
         Route::post('/logout', [A_AuthController::class, 'destroy'])->name('logout');
         Route::view('/home', 'home')->name('home');
-    });
-    Route::get('/History-main', function () {
-        return view('/History-main');
+
+        Route::get('/user', function () {
+            return view('/user');
+        });
+        
+        Route::get('/History-main', function () {
+            return view('/History-main');
+        });
+
+        Route::get('/contactUsAdmin', function () {
+            return view('/contactUsAdmin');
+        });
+
+        Route::get('/contactUsAdmin', [getController::class,'index']);
+
+        route::get('/home',[P_AuthController::class,'index']);
+        Route::get('/delete/{id}',[P_AuthController::class,'delete']);
+
+        route::get('/user',[userscontroller::class,'index']);
+
+        Route::get('/History-main',[historycontroller::class,'index']);
     });
 });
 
-// route::get('/admin/adminHome',[paramedicalController::class,'index']);
 
-// route::get('/admin/adminHome',[paramedicalController::class,'index']);
-
-// Route::get('/admin/History-main',[historycontroller::class,'index']);
-
-Route::get('/admin/user', function () {
-    return view('/admin/user');
-});
-
-// route::get('/admin/user',[userscontroller::class,'index']);
-
-// Route::get('/admin', [historycontroller::class,'index']);

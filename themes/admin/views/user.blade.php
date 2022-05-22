@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-   <link
+  <link
       rel="stylesheet"
       href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
@@ -49,42 +49,49 @@
             <i class="fas fa-comment-alt-dots"></i>
           </a>
         </div>
+        <a style="color: var(--light); margin-bottom: 50px" href="{{ route('admin.logout') }}"
+        onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();">
+            <i class="fas fa-sign-out-alt"></i>
+        </a>
+      <form id="logout-form" action="{{ route('admin.logout') }}"     method="POST" class="d-none">
+          @csrf
+      </form>
       </div>
     </div>
     <div style="overflow-x: hidden" class="admin-container">
-             <div style="display: flex;justify-content: space-around;margin-bottom: 40px;width: 80vw;"> 
-      <a href="adminHome">
-          <h1>paramedicals</h1>
+            <div style="display: flex;justify-content: space-around;margin-bottom: 40px;width: 80vw;"> 
+      <a href="home">
+          <h1>Paramedicals</h1>
       </a>
         <h1>U<span class="header-span">ser</span>s</h1>
       </div>
     </div>
     <div class="users-container">
       @foreach ($allUsers as $user)
-      <div class="user-card users">
+      <div class="user-card">
         <section>
-          <img src="../images/{{$user->image}}" alt="" />
+          <img src="../images/usersimgs/{{$user->image}}" alt="" />
         </section>
         <aside>
           <header>
             <h2>{{$user->name}}</h2>    
           </header>
           <main>
-              {{-- <h5>Full name <span>Ahmed yasser mahmoud ahmed</span><h5>           --}}
               <h5>Mobile <span>{{$user->phonenum}}</span> </h5>
               <h5>Email <span>{{$user->email}}</span></h5>
-              <h5>Gender <span>{{$user->gender}}</span></h5>
-              <h5>national id </h5>
-              <span class="view-national-id-overlay">view</span>
-              <div class="national-id-overlay">
-                  <img src="../images/{{$user->NIDfront}}" alt="">
-                  <img src="../images/{{$user->NIDback}}" alt="">
+              <h5>Gender <span style="text-transform: capitalize">{{$user->gender}}</span></h5>
+              <h5>National ID </h5> 
+    <span class="view-national-id-overlay" style="cursor: pointer;">View</span>
+              <div class="national-id-overlay" style="flex-direction: row; padding: 20px;">
+                  <img src="../images/usersimgs/{{$user->NIDfront}}" alt="">
+                  <img src="../images/usersimgs/{{$user->NIDback}}" alt="">
+                  <img src="../images/usersimgs/{{$user->NIDselfie}}" alt="">
                   <i class="fas fa-times hide-national-id-overlay"></i>
               </div>
           </main>
         </aside>
       </div>
-    
       @endforeach
   </div>
   <script

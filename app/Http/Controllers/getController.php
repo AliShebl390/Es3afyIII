@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
-use App\get;
+use App\Models\get;
 use Illuminate\Support\Facades\Auth;
 
 class getController extends Controller
@@ -22,6 +22,6 @@ class getController extends Controller
     public function index()
     {
         $messages = get::get();
-        return view('admin/contactUsAdmin', compact('messages'));  
+        return view('/contactUsAdmin', compact('messages'));  
     }
 }

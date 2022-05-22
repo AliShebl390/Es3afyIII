@@ -54,16 +54,18 @@
             <i class="fas fa-comment-alt-dots"></i>
           </a>
         </div>
+        <a style="color: var(--light); margin-bottom: 50px" href="{{ route('admin.logout') }}"
+        onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();">
+            <i class="fas fa-sign-out-alt"></i>
+        </a>
+      <form id="logout-form" action="{{ route('admin.logout') }}"     method="POST" class="d-none">
+          @csrf
+      </form>
       </div>
     </div>
     <div style="overflow-x: auto" class="admin-container">
-      <div
-        style="
-          display: flex;
-          justify-content: space-around;
-          margin-bottom: 40px;
-        "
-      >
+      <div style=" display: flex; justify-content: space-around; margin-bottom: 40px">
         <h1>Pa<span class="header-span">ramedic</span>als</h1>
 
         <a href="user">
@@ -75,7 +77,7 @@
       @foreach($allParamedicals as $oneParamedical)
       <div class="user-card">
         <section>
-          <img src="../images/{{$oneParamedical->image}}" alt="" />
+          <img src="../images/usersimgs/{{$oneParamedical->image}}" alt="" />
         </section>
         <aside>
           <header>

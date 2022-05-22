@@ -72,7 +72,7 @@
       </label>
       <p id="text">Offline</p>
       <a href="http://es3afyiii.test/paramedic/profile">
-        <img class="paramedic-img" src="/images/{{$para->image}}" alt="" />
+        <img class="paramedic-img" src="/images/usersimgs/{{$para->image}}" alt="" />
       </a>
     </div>
     <div id="map"></div>

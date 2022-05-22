@@ -44,36 +44,42 @@
       <div class="sidebar-content">
         <img src="/images/logo png.png" alt="" />
         <div class="center">
-          <a style="color: var(--light)" href="adminHome">
+          <a style="color: var(--light)" href="home">
             <i class="fas fa-home"></i>
           </a>
           <a style="color: var(--light)" href="History-main">
             <i class="fas fa-history"></i>
           </a>
-          <a style="color: var(--light)" href="adminHome">
-            <i class="fas fa-user-plus"></i>
+          <a style="color: var(--light)" href="contactUsAdmin">
+            <i class="fas fa-comment-alt-dots"></i>
           </a>
         </div>
+        <a style="color: var(--light); margin-bottom: 50px" href="{{ route('admin.logout') }}"
+        onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();">
+            <i class="fas fa-sign-out-alt"></i>
+        </a>
+      <form id="logout-form" action="{{ route('admin.logout') }}"     method="POST" class="d-none">
+          @csrf
+      </form>
       </div>
     </div>
-
     <div class="history-container">
       <div class="history-main">
         @foreach($All_history as $onehistory)
-        <div class="rides-history-section">
+        <div class="rides-history-section" style="cursor: default">
           <div style=" display: flex; align-items: flex-start justify-content: center; text-align: center; position: relative; flex-direction: column;" class="rides-section1">
-            <p>{{$onehistory->timedate}}</p>
-            <span style="margin-top: 5px">Made by:{{$onehistory->paraname}}             <img style="width: 35px;height: 35px;" src="/images/{{$onehistory->userimage}}" alt="" />
-
+            <p><i style="font-size: 18px" class="fas fa-calendar-alt"></i> {{$onehistory->timedate}}</p>
+            <span style="margin-top: 5px">Made by: {{$onehistory->paraname}}             <img style="width: 35px;height: 35px; border-radius: 20%; margin-left: 10px" src="/images/usersimgs/{{$onehistory->userimage}}" alt="" />
           </span>
           </div>
           <hr />
           <div class="rides-section2">
-            <img src="/images/{{$onehistory->userimage}}" alt="" />
+            <img src="/images/usersimgs/{{$onehistory->userimage}}" alt="" />
             <div class="rides-adjust">
               <h4>{{$onehistory->username}}</h4>
               <i class="fas fa-star"><span>{{$onehistory->Rate}}</span></i>
-              <div class="show" style="margin-top: 10px;">view more...</div>
+              <div class="show" style="margin-top: 10px; cursor: pointer;">View feedback...</div>
               <div class="feedback-admin">
               <div class="close">
                 <i class="fas fa-times"></i>
@@ -87,18 +93,11 @@
           </div>
           <hr />
           <div class="rides-section3">
-            <h5>trip</h5>
+            <h5>Trip details:</h5>
             <i style="display: flex; gap: 10px" class="fas fa-location">
               <span>
                 Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Molestiae voluptas enim accu</span
-              >
-              </i
-            >
-            <i style="display: flex; gap: 10px" class="fas fa-location">
-              <span> address example</span>
-              </i
-            >
+                Molestiae voluptas enim accu</span></i>
           </div>
         </div>
         @endforeach

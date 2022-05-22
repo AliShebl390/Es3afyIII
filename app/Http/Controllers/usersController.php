@@ -15,10 +15,11 @@ class userscontroller extends Controller
     public function index()
     {
         $allUsers = User::join('_nationalid', '_nationalid.userid','=','users.id')
-        ->select('users.*','_nationalid.front as NIDfront','_nationalid.back as NIDback')->get();
-        return view('/admin/user',compact('allUsers'));
+        ->select('users.*','_nationalid.front as NIDfront','_nationalid.back as NIDback','_nationalid.selfie as NIDselfie')->get();
+        return view('/user',compact('allUsers'));
+
         // $allUsers = User::get();
-        // return view('admin/user', compact('allUsers'));
+        // return view('/user', compact('allUsers'));
     }
 
     public function index_para($id)
@@ -115,7 +116,7 @@ class userscontroller extends Controller
         $user->phonenum =$request->phonenum;
         $file=$request->image;
         $imageName = time().'.'.$request->image->extension();  
-        $file->move(public_path('images').'/',$imageName);
+        $file->move(public_path('images/usersimgs').'/',$imageName);
         $user->image =$imageName;
         $user->save();
         $redirect = '/profile';

@@ -43,7 +43,7 @@ class NIDController extends Controller
         }
         $file=$request->front;
         $imageName = time().'.'.$request->front->extension();  
-        $file->move(public_path().'/images',$imageName);
+        $file->move(public_path().'/images/usersimgs',$imageName);
         $NID->front =$imageName;
         $NID->save();
         return redirect('/naitonal-id-back');

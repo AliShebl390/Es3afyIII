@@ -66,7 +66,7 @@
       <div class="sidebar-content">
         <img src="/images/logo png.png" alt="" />
         <div class="center">
-          <a style="color: var(--light)" href="adminHome">
+          <a style="color: var(--light)" href="home">
             <i class="fas fa-home"></i>
           </a>
           <a style="color: var(--light)" href="History-main">
@@ -76,6 +76,14 @@
             <i class="fas fa-comment-alt-dots"></i>
           </a>
         </div>
+        <a style="color: var(--light); margin-bottom: 50px" href="{{ route('admin.logout') }}"
+        onclick="event.preventDefault();
+          document.getElementById('logout-form').submit();">
+            <i class="fas fa-sign-out-alt"></i>
+        </a>
+      <form id="logout-form" action="{{ route('admin.logout') }}"     method="POST" class="d-none">
+          @csrf
+      </form>
       </div>
     </div>
     <div class="contact-us-container">

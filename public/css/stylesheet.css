@@ -2408,20 +2408,10 @@ th {
   font-size: 14px;
 }
 
-
-
-
-
-
 .users-body{
   position: relative;
 }
 
-*{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 .users-container{
     width: calc(100vw - 70px); 
     display: flex;
@@ -2440,10 +2430,10 @@ th {
     height: 350px;
     background-color: rgb(226, 225, 223);
     display: flex;
-    border: 1px solid rgba(255, 0, 0, 0.199);
     border-radius: 3%;
     position: relative;
-    cursor: pointer;
+  border: 1px solid rgba(0, 128, 0, 0.397);
+    /* cursor: pointer; */
 }
 .first-aid-img {
   width: 80px;
@@ -2532,9 +2522,9 @@ th {
     top: 0;
 }
 .national-id-overlay img{
-    width: 50%;
-    height: 45%;
-    object-fit: contain;
+  width: 33%;
+  height: 90%;
+  object-fit: contain;
 }
 .national-id-overlay i {
     position: absolute;
