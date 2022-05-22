@@ -1,3 +1,5 @@
+<title>Es3afy</title>
+    <link rel="icon" type="image/png" sizes="32x32" href="images/Untitled-1.png"/>
 <x-app-layout>
     <div class="container">
         <div class="row justify-content-center">
