@@ -12,6 +12,11 @@ use App\Models\Admin;
 class A_AuthController extends Controller
 {
     public function create(request $request){
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:admins',
+            'password' => 'required|string|confirmed|min:8',
+        ]);
         $admin = new admin();
         $admin->name =$request->name;
         $admin->email =$request->email;

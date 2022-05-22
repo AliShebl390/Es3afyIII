@@ -14,4 +14,21 @@ Route::prefix('admin')->middleware('theme:admin')->name('admin.')->group(functio
         Route::post('/logout', [A_AuthController::class, 'destroy'])->name('logout');
         Route::view('/home', 'home')->name('home');
     });
+    Route::get('/History-main', function () {
+        return view('/History-main');
+    });
 });
+
+// route::get('/admin/adminHome',[paramedicalController::class,'index']);
+
+// route::get('/admin/adminHome',[paramedicalController::class,'index']);
+
+// Route::get('/admin/History-main',[historycontroller::class,'index']);
+
+Route::get('/admin/user', function () {
+    return view('/admin/user');
+});
+
+// route::get('/admin/user',[userscontroller::class,'index']);
+
+// Route::get('/admin', [historycontroller::class,'index']);

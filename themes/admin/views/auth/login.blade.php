@@ -1,5 +1,5 @@
 <x-app-layout>
-    <div class="container" style="background-color: blueviolet">
+    <div class="container">
         <div class="row justify-content-center">
             <div class="col-md-8">
                 <div class="card">

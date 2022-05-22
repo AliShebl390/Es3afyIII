@@ -1,0 +1,419 @@
+@media screen and (min-width: 320px) and (max-width: 480px) {
+  /* sign-up-in */
+  .sign-up {
+    
+  }
+  .content-container-2 {
+    top: 5.5%;
+    left: 0;
+    width: 100vw;
+  }
+  .content-container input {
+    height: 31px;
+  }
+  .sign-active {
+    transform: translateY(0);
+  }
+  .inputs-container {
+    margin-top: 50px;
+  }
+
+  .go-back {
+    font-size: 32px;
+  }
+
+  .sign-up p {
+    font-size: 12px;
+  }
+
+  .history-body {
+    overflow: hidden;
+  }
+
+  /*home*/
+  .emergency-section img {
+    width: 250px;
+    height: 250px;
+  }
+  .sos-section i {
+    font-size: 50px;
+  }
+  .sos-contact,
+  .sos-contact1,
+  .sos-contact2,
+  .sos-contact3,
+  .sos-contact4,
+  .sos-contact5 {
+    width: 50px;
+    height: 50px;
+  }
+  /*responders on the way */
+  .responders-main img {
+    width: 350px;
+    height: 250px;
+    margin-top: 5%;
+  }
+
+  /* admin-home */
+  .admin-container {
+    transform: translateX(0);
+    left: 1%;
+    width: 100vw;
+  }
+  tr th,
+  td {
+    padding-right: 20px;
+    font-size: 12px;
+  }
+  td i {
+    font-size: 20px;
+    padding-right: 5px;
+  }
+  .admin-header {
+    transform: translateX(0);
+    width: 100vw;
+  }
+  .admin-sidebar {
+    /* height: 70px;
+    width: 90vw;
+    bottom: 10%;
+    z-index: 1;
+    transform: translateX(0); */
+    display: none;
+  }
+  .users-body{
+    display: none;
+  }
+  .history-body{
+    display: none;
+  }
+  .admin-body{
+    display: none;
+  }
+  .admin-header-section2 {
+    margin-left: 0;
+    padding-left: 15px;
+  }
+
+  .admin-sidebar .center {
+    flex-direction: row;
+
+    width: 100%;
+    align-items: center;
+    justify-content: space-around;
+
+    margin-bottom: 0;
+  }
+  .admin-sidebar i {
+    font-size: 30px;
+  }
+  .admin-sidebar img {
+    display: none;
+  }
+  .history-main {
+    transform: translateX(0);
+    top: 3%;
+    width: 100vw;
+    margin-bottom: 0;
+    padding: 0;
+    margin-top: 20%;
+    height: 78vh;
+  }
+  .history-header {
+    flex-direction: column;
+    transform: translateX(0);
+    top: 12%;
+    gap: 15px;
+    left: 10%;
+  }
+  .rides-history-section:first-of-type {
+    margin-top: 30px;
+  }
+  .overlay {
+    overflow-y: hidden;
+  }
+  .container-1 {
+    width: 100vw;
+    height: 400px;
+    top: 25%;
+  }
+  .sign-up div{
+    gap: 7px;
+  }
+  .sign-up  h1 {
+    margin-bottom: 5px;
+  }
+  .bmi{
+  display: flex;
+  width: max-content;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+  padding-left: 1rem;
+}
+.bmi div{
+  transform: translateX(-20%);
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+.bmi img {
+  width: 40px;
+  object-fit: contain;
+  aspect-ratio: 1/1;
+}
+.bmi select{
+  height: 30px;
+  width: 40px;
+}
+.bmi input{
+  width: 40px;
+  transform: translateX(-1%);
+
+  height: 30px;
+ font-size: 10px;
+  padding: 1px;
+
+}
+
+
+
+  /*choose-user*/
+  /* admin*/
+  .container-1 {
+    width: 100vw;
+    height: 400px;
+    top: 15%;
+  }
+  /*choose-user*/
+  .adj img {
+    width: 200px;
+    height: 200px;
+  }
+  .adj h5 {
+    font-size: 32px;
+  }
+  .cont h3 {
+    align-self: flex-start;
+    font-size: 30px;
+  }
+
+  /*arrived*/
+
+  .arrived img {
+    width: 70px;
+    height: 70px;
+  }
+  .arrived h2 {
+    font-size: 20px;
+  }
+  .arrived button {
+    font-size: 16px;
+    height: 36px;
+  }
+  .arrived-section1 {
+    gap: 10px;
+  }
+
+  /* check your email */
+  .content-fp {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+  }
+  .content-rp {
+    width: 100vw;
+    height: 100vh;
+    top: 0;
+  }
+
+  /*profile*/
+  .profile-overlay i {
+    position: absolute;
+    left: 90%;
+    top: 1%;
+    font-size: 32px;
+    color: white;
+    cursor: pointer;
+  }
+}
+
+@media screen and (min-width: 481px) and (max-width: 768px) {
+  .request-section2 {
+    justify-content: center;
+  }
+   .content-container-2{
+    top: 5.5%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1024px) {
+  /*arrived*/
+
+  .arrived img {
+    width: 80px;
+    height: 80px;
+  }
+  .arrived h2 {
+    font-size: 24px;
+  }
+  .arrived button {
+    font-size: 24px;
+    width: 270px;
+    height: 61px;
+  }
+  .arrived-section1 {
+    gap: 10px;
+  }
+  .request-section2 {
+    justify-content: center;
+  }
+  .history-body {
+    overflow-y: scroll;
+  }
+  .content-container-2{
+    top: 5.5%;
+  }
+}
+
+@media screen and (min-width: 1025px) and (max-width: 1200px) {
+  .request-section2 {
+    justify-content: center;
+  }
+  .history-body {
+    overflow-y: scroll;
+  }
+  
+}
+@media screen and (min-width: 1201px) {
+  .request-section2 {
+    justify-content: center;
+  }
+  .history-body {
+    overflow-y: scroll;
+  }
+}
+
+/* iphone 5/SE */
+@media (max-height: 667px) {
+  /* arrived */
+  .arrived img {
+    width: 50px;
+    height: 50px;
+  }
+  .arrived h2 {
+    font-size: 16px;
+  }
+  .arrived button {
+    font-size: 16px;
+    width: 150px;
+    height: 20px;
+  }
+  .arrived-section1 {
+    gap: 10px;
+  }
+  .request-section1 img {
+    width: 50px;
+    height: 50px;
+  }
+  .request-section3 .decline {
+    font-size: 12px;
+    width: 100px;
+  }
+  .accept-button {
+    font-size: 12px;
+    width: 100px;
+  }
+  .adj img {
+    width: 130px;
+    height: 130px;
+  }
+  
+  .sign-up-h1 {
+    font-size: 24px;
+     margin-bottom: 5px;
+  }
+  .content-container {
+    font-size: 12px;
+   
+  }
+  .content-container-2 {
+    top: 5.5%;
+
+    left: 0;
+    width: 100vw;
+  }
+  .content-container input {
+    height: 31px;
+  }
+  .sign-up {
+    gap: 8px;
+  }
+  .sign-up p span  {
+    font-size: 12px;
+  }
+
+  .sign-active {
+    transform: translateY(0);
+  }
+  .sos-contact,
+  .sos-contact1,
+  .sos-contact2,
+  .sos-contact3,
+  .sos-contact4,
+  .sos-contact5 {
+    width: 40px;
+    height: 40px;
+  }
+  .sign-up div{
+    gap: 0px;
+    font-size: 12px;
+  }
+   .sign-up div input {
+     height: 20px;
+   }
+  .bmi{
+  display: flex;
+  width: max-content;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  gap: 10px;
+  padding-left: 1rem;
+}
+.bmi div{
+  /* transform: translateX(-20%); */
+  height: max-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  
+}
+.bmi img {
+  width: 30px;
+  object-fit: contain;
+  aspect-ratio: 1/1;
+}
+.bmi select{
+  height: 20px;
+  width: 40px;
+}
+.bmi input{
+  width: 50px;
+  transform: translateX(10%);
+
+  height: 20px;
+ font-size: 10px;
+  padding: 5px;
+
+}
+.sign-up button{
+  height: 20px;
+  font-size: 12px;
+  width: 100px;
+}
+}

@@ -21,6 +21,8 @@ class Paramedic extends Authenticatable
         'name',
         'email',
         'password',
+        'image',
+        'age',
     ];
 
     /**

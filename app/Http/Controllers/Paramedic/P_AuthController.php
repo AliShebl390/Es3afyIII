@@ -12,9 +12,20 @@ use App\Models\Paramedic;
 class P_AuthController extends Controller
 {
     public function create(request $request){
+        $request->validate([
+            'name' => 'required|string|max:255',
+            'email' => 'required|string|email|max:255|unique:paramedics',
+            'password' => 'required|string|confirmed|min:8',
+        ]);
         $para = new Paramedic();
         $para->name =$request->name;
         $para->email =$request->email;
+        $para->age =$request->age;
+        $para->phonenumber =$request->phonenumber;
+        $file=$request->image;
+        $imageName = time().'.'.$request->image->extension();  
+        $file->move(public_path('images').'/',$imageName);
+        $para->image =$imageName;
         $para->password =\Hash::make($request->password);
         $save = $para->save();
         if( $save ){
@@ -31,7 +42,13 @@ class P_AuthController extends Controller
             //     'email' => 'Invalid email or password'
             // ]);     
         }
-        return redirect()->intended(route('paramedic.home'));
+        return redirect()->intended(route('home'));
+    }
+
+    public function show()
+    {   
+        $para = Paramedic::find(Auth::guard('paramedic')->user()->id);
+        return view('home',compact('para'));
     }
 
     public function destroy()
@@ -40,4 +57,32 @@ class P_AuthController extends Controller
         return redirect('/');
     }
 
+    public function delete($id)
+    {
+        $oneParamedical = paramedic::find($id);
+        $oneParamedical->delete();
+        return redirect('admin/adminHome');    
+    }
+
+    // function for showing data at the para's profile
+    public function showpara()
+    {
+        $para = Paramedic::find(Auth::guard('paramedic')->user()->id);
+        return view('Profile',compact('para')); 
+    }
+        // function for updating data at the para's profile
+    public function update(Request $request)
+    {
+        $para = Paramedic::find($request->id);
+        $para->name =$request->name;
+        $para->email =$request->email;
+        $para->phonenumber =$request->phonenumber;
+        $file=$request->image;
+        $imageName = time().'.'.$request->image->extension();  
+        $file->move(public_path('images').'/',$imageName);
+        $para->image =$imageName;
+        $para->save();
+        $redirect = 'paramedic/profile';
+        return redirect($redirect);
+    }
 }
