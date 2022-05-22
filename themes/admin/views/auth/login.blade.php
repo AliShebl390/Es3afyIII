@@ -1,3 +1,4 @@
+<title>Es3afy</title>
 <x-app-layout>
     <div class="container">
         <div class="row justify-content-center">

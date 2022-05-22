@@ -31,12 +31,8 @@ class A_AuthController extends Controller
 
     public function store(request $request)
     {
-        if (!Auth::guard('admin')->attempt($request->only('email', 'password'), $request->filled('remember'))){
-            // throw ValidationException::withMessege([
-            //     'email' => 'Invalid email or password'
-            // ]);     
-        }
-        return redirect()->intended(route('admin.home'));
+        Auth::guard('admin')->attempt($request->only('email', 'password'), $request->filled('remember'));
+        return redirect('/admin/home');
     }
 
     public function destroy()

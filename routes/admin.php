@@ -33,6 +33,7 @@ Route::prefix('admin')->middleware('theme:admin')->name('admin.')->group(functio
         Route::get('/contactUsAdmin', [getController::class,'index']);
 
         route::get('/home',[P_AuthController::class,'index']);
+        // route::get('/login',[P_AuthController::class,'index']);
         Route::get('/delete/{id}',[P_AuthController::class,'delete']);
 
         route::get('/user',[userscontroller::class,'index']);
