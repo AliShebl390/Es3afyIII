@@ -52,7 +52,7 @@
 
       <div class="content-container">
         <div class="sign-up">
-          <form method="POST" class="sign-up" action="{{ route('register') }}">
+          <form method="POST" style="top:2%" class="sign-up" action="{{ route('register') }}">
             @csrf
             <h1 class="sign-up-h1">Sign Up</h1>
                 <div class="form-group row">
@@ -74,13 +74,14 @@
                     <div class="col-md-6">
                         <input id="email" type="email" class="form-control @error('email')is-invalid @enderror input-custom" name="email" value="{{ old('email') }}" required autocomplete="email">
 
-                        @error('email')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                      </div>
                     </div>
-                </div>
+                    @error('email')
+                        <span style="margin-top: -15px;
+                      " class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 
                 <div class="form-group row">
                     <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
@@ -88,13 +89,14 @@
                     <div class="col-md-6">
                         <input id="password" type="password" class="form-control @error('password') is-invalid @enderror input-custom" name="password" required autocomplete="new-password">
 
-                        @error('password')
-                            <span class="invalid-feedback" role="alert">
-                                <strong>{{ $message }}</strong>
-                            </span>
-                        @enderror
+                      </div>
                     </div>
-                </div>
+                    @error('password')
+                        <span style="margin-top: -15px;
+                      " class="invalid-feedback" role="alert">
+                            <strong>{{ $message }}</strong>
+                        </span>
+                    @enderror
 
                 <div class="form-group row">
                     <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
@@ -135,16 +137,16 @@
                 <div class="bmi">
                   <div class="">
                   <img src="/images/Blood_cute_illustration_red_fresh_generated.jpg" alt="">
-                  <input type="text" style="text-align: center; text-transform: capitalize" name="bloodType" id="" placeholder="A">
+                  <input type="text" style="text-align: center; text-transform: capitalize" name="bloodType" id="" placeholder="A" required>
                   
                   </div>
                   <div class="">
                     <img src="/images/weigth.jpg" alt="">
-                    <input type="text" name="weight" id="" placeholder="80 KG">
+                    <input type="number" name="weight" id="" placeholder="80 KG" required>
                   </div>
                    <div class="">
                     <img style="object-fit:contain ;" src="/images/vecteezy_illustration-vector-graphic-of-size-chart_.jpg" alt="">
-                    <input type="text" name="height" id="" placeholder="172 cm">
+                    <input type="number" name="height" id="" placeholder="172 cm" required>
                   </div>
                 </div>      
 
@@ -176,25 +178,25 @@
                 <div class="col-md-6">
                     <input id="email" type="email" placeholder="E-mail" class="input-custom form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
 
-                    @error('email')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                  </div>
                 </div>
-            </div>
+                @error('email')
+                    <span style="color: #eee" class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
 
             <div class="form-group row">
                 <div class="col-md-6">
                     <input id="password" type="password" class="input-custom form-control @error('password') is-invalid @enderror" placeholder="Password" name="password" required autocomplete="current-password">
 
-                    @error('password')
-                        <span class="invalid-feedback" role="alert">
-                            <strong>{{ $message }}</strong>
-                        </span>
-                    @enderror
+                  </div>
                 </div>
-            </div>
+                @error('password')
+                    <span style="color: #eee" class="invalid-feedback" role="alert">
+                        <strong>{{ $message }}</strong>
+                    </span>
+                @enderror
 
             <div class="form-group row">
                 <div class="col-md-6 offset-md-4">
