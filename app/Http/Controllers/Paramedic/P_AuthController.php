@@ -37,12 +37,9 @@ class P_AuthController extends Controller
 
     public function store(request $request)
     {
-        if (!Auth::guard('paramedic')->attempt($request->only('email', 'password'), $request->filled('remember'))){
-            // throw ValidationException::withMessege([
-            //     'email' => 'Invalid email or password'
-            // ]);     
-        }
-        return redirect()->intended(route('home'));
+        // return redirect()->intended(route('home'));
+        Auth::guard('paramedic')->attempt($request->only('email', 'password'), $request->filled('remember'));
+        return redirect('/paramedic/home');
     }
 
     public function show()
@@ -87,7 +84,7 @@ class P_AuthController extends Controller
         $para->phonenumber =$request->phonenumber;
         $file=$request->image;
         $imageName = time().'.'.$request->image->extension();  
-        $file->move(public_path('images').'/',$imageName);
+        $file->move(public_path('images/usersimgs').'/',$imageName);
         $para->image =$imageName;
         $para->save();
         $redirect = 'paramedic/profile';

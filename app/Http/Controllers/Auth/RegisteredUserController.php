@@ -41,11 +41,18 @@ class RegisteredUserController extends Controller
         Auth::login($user = User::create([
             'name' => $request->name,
             'email' => $request->email,
+            'phonenum' => $request->phonenum,
+            'gender' => $request->gender,
+            'age' => $request->age,
+            'image' => $request->image,
+            'bloodType' => $request->bloodType,
+            'weight' => $request->weight,
+            'height' => $request->height,
             'password' => Hash::make($request->password),
         ]));
 
         event(new Registered($user));
 
-        return redirect(RouteServiceProvider::HOME);
+        return redirect('/medical-history');
     }
 }

@@ -4,7 +4,7 @@
     
   }
   .content-container-2 {
-    top: 7.5%;
+    top: 10.5%;
     left: 0;
     width: 100vw;
   }
@@ -180,8 +180,6 @@
 
 }
 
-
-
   /*choose-user*/
   /* admin*/
   .container-1 {
@@ -276,7 +274,7 @@
     overflow-y: scroll;
   }
   .content-container-2{
-    top: 4.5%;
+    top: 10.5%;
   }
 }
 
@@ -296,9 +294,9 @@
   .history-body {
     overflow-y: scroll;
   }
-  .content-container-2{
+  /* .content-container-2{
     top: 4.5%;
-  }
+  } */
 }
 
 /* iphone 5/SE */

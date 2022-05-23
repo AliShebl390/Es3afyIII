@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 use App\Models\User;
 
 class userscontroller extends Controller
@@ -39,11 +40,6 @@ class userscontroller extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
-    {
-        //
-    }
-
     /**
      * Store a newly created resource in storage.
      *
@@ -95,11 +91,6 @@ class userscontroller extends Controller
         return view('paramedic/paramedicHome',compact('user')); 
     }
     
-    public function edit_password($id)
-    {
-        $password = user::find($id);
-        return view('creat-password-from-profile',compact('password')); 
-    }
 
     /**
      * Update the specified resource in storage.
@@ -125,11 +116,12 @@ class userscontroller extends Controller
 
     public function update_password(Request $request)
     {
-        $password = user::find($request->id);
-        $password->password =$request->password;
-        $password->save();
-        $redirect = '/creat-password-from-profile';
-        return redirect($redirect);
+        // $password = user::find(Auth::user()->id);
+        // $password->password =$request->password;
+        // // $password -> Hash::make($request->password);
+        // $password->save();
+        // $redirect = '/home';
+        // return redirect($redirect);
     }
     /**
      * Remove the specified resource from storage.

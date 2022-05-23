@@ -60,7 +60,7 @@ class NIDController extends Controller
         }
         $file=$request->back;
         $imageName = time().'.'.$request->back->extension();  
-        $file->move(public_path().'/images',$imageName);
+        $file->move(public_path().'/images/usersimgs',$imageName);
         $NID->back =$imageName;
         $NID->save();
         return redirect('/national-id-selfie');
@@ -77,7 +77,7 @@ class NIDController extends Controller
         }
         $file=$request->selfie;
         $imageName = time().'.'.$request->selfie->extension();  
-        $file->move(public_path().'/images',$imageName);
+        $file->move(public_path().'/images/usersimgs',$imageName);
         $NID->selfie =$imageName;
         $NID->save();
         return redirect('/home');

@@ -41,26 +41,26 @@
   </head>
 
   <body style="overflow-y: scroll; overflow-x: hidden">
-    <form method="post" action="{{url('paramedic/update')}}" enctype="multipart/form-data">
+    <form method="post" action="{{url('update-user')}}" enctype="multipart/form-data">
       @csrf 
       <div class="profile-overlay">
         <h1 style="margin-top: 60px">Edit your account</h1>
         <div class="profile-pic-div" style="margin: 50px 0 60px;
       }">
-          <img id="profile-pic" src="/images/usersimgs/{{$para->image}}" alt=""/>
+          <img id="profile-pic" src="images/usersimgs/{{$user->image}}" alt=""/>
           <input type="file" id="file" name="image"/>
           <label for="file" id="upload-btn" style="padding-top: 2.5px">Choose file</label>
         </div>
         <i class="fas fa-times close-profile-overlay"></i>
-        <input name="id" type="text" value="{{$para->id}}" hidden>
-        <input class="overlay-input-firstname input-custom" name="name" type="text" value="{{$para->name}}" />
-        <input class="overlay-input-mobile input-custom" name="phonenumber" type="text" value="{{$para->phonenumber}}" />
-        <input class="overlay-input-email input-custom" name="email" type="text" value="{{$para->email}}" />
+        <input name="id" type="text" value="{{$user->id}}" hidden>
+        <input class="overlay-input-firstname input-custom" name="name" type="text" value="{{$user->name}}" />
+        <input class="overlay-input-mobile input-custom" name="phonenum" type="text" value="{{$user->phonenum}}" />
+        <input class="overlay-input-email input-custom" name="email" type="text" value="{{$user->email}}" />
         <button type="submit" class="button-custom overlay-submit">Save Changes</button>
     </div>
     
     <div class="rating-header">
-      <a href="http://es3afyiii.test/paramedic/home">
+      <a href="/home">
           <i class="fas fa-arrow-alt-left go-back"></i>
       </a>
       <h1>Edit your account</h1>
@@ -70,37 +70,20 @@
       <div
         style=" display: flex; align-items: center; justify-content: center; position: relative;" class="">
         <div class="profile-pic-div">
-          <img id="profile-pic" src="/images/usersimgs/{{$para->image}}" alt=""/>
+          <img id="profile-pic" src="images/usersimgs/{{$user->image}}" alt=""/>
         </div>
         <i id="edit-icon" class="fas fa-edit ed"></i>
       </div>
 
       <div class="profile-section2">
         <h5>Name</h5>
-        <p class="first-name">{{$para->name}}</p>
+        <p class="first-name">{{$user->name}}</p>
 
         <h5>Phone number</h5>
-        <p class="mobile">{{$para->phonenumber}}</p>
+        <p class="mobile">{{$user->phonenum}}</p>
 
         <h5>Email</h5>
-        <p class="email">{{$para->email}}</p>
-
-        <h5>Password</h5>
-        <div style="display: flex; align-items: center" class="">
-          <input
-            class="profile-input"
-            type="password"
-            placeholder="***********"
-            disabled
-            style="caret-color: transparent"
-            ;
-          />
-
-          <a style="transform: translateY(-30%)"
-            href="/forget-passowrd-from-profile">
-            <span style="font-size: 12px; color: var(--light)"
-              >change password</span>
-            </a>
+        <p class="email">{{$user->email}}</p>
         </div>
       </div>
     </div>

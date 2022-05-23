@@ -48,10 +48,10 @@
 
     <div id="map"></div>
 
-    <div class="request-section">
+    <div class="request-section" style="height: 40vh;">
       <!--view user medical history when accept -->
       <div class="request-section1">
-        <img class="user-img" src="/images/{{$user->image}}" alt="" />
+        <img class="user-img" src="/images/usersimgs/{{$user->image}}" alt="" />
         <div class="">
           <h2>{{$user->name}}</h2>
           <a style="margin-top: 10px; display: block; color: var(--light)" href="http://es3afy.test/paramedic/current-user-medical-history">View medical history</a>

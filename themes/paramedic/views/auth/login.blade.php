@@ -41,7 +41,7 @@
           border-radius: 10px;
           margin-top: 5px;
           z-index: -1;
-          bottom: 10px;" class="alert alert-success">
+          bottom: 7%;" class="alert alert-success">
               {{ Session::get('success') }}
           </div>
           @endif

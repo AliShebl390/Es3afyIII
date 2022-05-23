@@ -27,10 +27,14 @@ class historyController extends Controller
         return view('/History-main',compact('All_history'));
     }
 
-    public function index_1()
+    public function index_medical()
     {   
-        $All_history1 = history::Where('userid',Auth::user()->id)->get();
-        return view('req-comp-for-user',compact('All_history1'));
+        $history_data = history::join('paramedics', 'paramedics.id', '=', 'history.paramidicid')
+        ->select('history.*', 'paramedics.name as paramidicName')
+        ->Where('userid',Auth::user()->id)
+        ->get();
+        return view('req-comp-for-user',compact('history_data'));
+
     }
 
     /**

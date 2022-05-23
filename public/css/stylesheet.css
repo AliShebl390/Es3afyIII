@@ -5,7 +5,6 @@
   --sm-font: 1rem;
   --md-font: 1.37rem;
 }
-
 .button-custom {
   width: 190px;
   height: 41px;
@@ -43,7 +42,7 @@ html {
 body {
   font-family: "Work Sans", sans-serif;
   background-color: #eee;
-  overflow: hidden;
+  overflow-x: hidden;
 }
 input:focus::placeholder {
   color: transparent;
@@ -60,7 +59,12 @@ a:active {
   outline: none;
 }
 
-
+.container {
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+}
 /* End Global Rules*/
 /* Start Landing */
 .landing-conent {
@@ -169,7 +173,7 @@ a:active {
   display: flex;
   align-items: center;
   justify-content: center;
-  
+  top: 5%;
 }
 
 .sign-up {
@@ -202,8 +206,8 @@ a:active {
 }
 
 .content-container-2 {
-  top: 14%;
-  height: 120%;
+  top: 11%;
+  height: 100%;
   width: 100%;
   position: absolute;
   border-radius: 60% / 10%;
@@ -401,9 +405,7 @@ a {
   height: 30px;
  font-size: 10px;
   padding: 5px;
-
 }
-
 /* End Forget pass */
 /* Start Creat new password */
 .container-rp {
@@ -454,9 +456,6 @@ a {
 .adjust-2 {
   display: flex;
 }
-.adjust-2 i {
-  transform: translate(-110%, 20%);
-}
 /* End Creat password */
 /*Start of medical history*/
 .mh-container {
@@ -464,22 +463,50 @@ a {
   height: 100vh;
 }
 
-.mh-main {
+.mh-main form{
   display: flex;
   flex-direction: column;
-  gap: 35px;
+  gap: 25px;
   padding: 1.5rem;
 }
+.mh-main span{
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  font-weight: bold;
+}
+
 .section-1 {
   height: fit-content;
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
 }
-.section-1 span {
-  transform: translateY(25%);
+.section-1 label{
+  font-size: 1.2rem;
+  text-transform: capitalize;
+  font-weight: bold;
 }
+
+.section-1 select{
+  height: 200px;
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #dadada;
+  max-width: 300px;
+}
+.section-1 select option{
+  width: 100%;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
 .section-1 img {
   width: 100px;
   height: 100px;
   transform: translateY(30%);
+  margin-bottom: 20px;
 }
 .section-1 i {
   padding-left: 10px;
@@ -491,6 +518,8 @@ a {
 }
 .mh-main a {
   margin: 0 auto;
+  display: flex;
+  justify-content: center
 }
 .allerrgies-container {
   display: flex;
@@ -702,6 +731,7 @@ a {
 .front::before {
   content: "Photo Of A Front";
 }
+
 /* End National id */
 /* Start Verification */
 .ver-container {
@@ -820,7 +850,7 @@ a {
 /* Start Process */
 
 .req-content {
-  padding: 20px;
+  margin: 15px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -982,11 +1012,11 @@ a {
   height: 100px;
   overflow: hidden;
 }
-.g-content form a {
+.g-content form button {
   margin-top: 1vh;
   text-align: center;
 }
-.g-content form a i {
+.g-content form button i {
   font-size: 60px;
 }
 /* End Get in touch */
@@ -1190,14 +1220,14 @@ a {
   justify-content: center;
   cursor: pointer;
 }
-.add-new-content .inputs form {
+.add-new-content form .inputs {
   margin-top: 100px;
   display: flex;
   flex-direction: column;
   gap: 6vh;
   align-items: center;
 }
-.add-new-content .inputs form input {
+.add-new-content form .inputs input {
   height: 46px;
   width: 80%;
   margin-left: -20px;
@@ -1207,24 +1237,25 @@ a {
   color: var(--dark);
   font-size: 1rem;
 }
-.add-new-content .inputs form input::placeholder {
-  color: #eee;
+.add-new-content form .inputs input::placeholder {
+  color: #8c8c8c;
 }
-.add-new-content .inputs form .buttons {
+.add-new-content form .inputs .buttons {
   display: flex;
   gap: 50px;
 }
-.add-new-content .inputs form .buttons input {
+.add-new-content form .inputs .buttons button {
   width: 130px;
   height: 40px;
+  border-radius: 5px;
 }
-.add-new-content .inputs form .buttons .add {
+.add-new-content form .inputs .buttons .add {
   color: #eee;
   background-color: var(--dark);
   font-weight: bold;
   font-size: 1rem;
 }
-.add-new-content .inputs form .buttons input {
+.add-new-content form .inputs .buttons button {
   color: var(--light);
   background-color: #fff;
   font-weight: bold;
@@ -1256,7 +1287,7 @@ a {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  background: url(/images/person.jpg);
+  /* background: url(/images/person.jpg); */
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -1264,16 +1295,19 @@ a {
   margin-top: 10px;
 }
 
+.profile-image img{
+  border-radius: 50%;
+}
+
 .emergency-section {
   width: 100vw;
-
   display: flex;
   align-items: center;
   justify-content: center;
   flex-direction: column;
 }
 .emergency-section h1 {
-  color: red;
+  color: #bd2d2d;
 }
 
 .emergency-section img {
@@ -1284,7 +1318,7 @@ a {
   text-align: center;
   font-size: 14px;
   padding-top: 20px;
-  color: red;
+  color: #bd2d2d;
 }
 .sos-section {
   width: 100vw;
@@ -1294,13 +1328,21 @@ a {
   justify-content: center;
 }
 .sos-section i {
-  color: red;
+  color: #bd2d2d;
   font-size: 60px;
   z-index: 2;
   position: absolute;
   top: 90%;
 }
-
+.sos-contact-div{
+  display: flex;
+  gap: 20px;
+  position: absolute;
+  top: 90%;
+  opacity: 0;
+  transition: 500ms ease-in;
+  
+}
 .sos-contact,
 .sos-contact1,
 .sos-contact2,
@@ -1311,33 +1353,14 @@ a {
   height: 60px;
   object-fit: cover;
   border-radius: 50%;
-  position: absolute;
   top: 90%;
   z-index: 1;
-  opacity: 0;
   transition: 500ms ease-in;
 }
 
-.active {
-  transform: translateY(-300%);
+.activeSos {
   opacity: 1;
-}
-
-.active2 {
-  transform: translate(-150%, -260%);
-  opacity: 1;
-}
-.active3 {
-  transform: translate(-200%, -100%);
-  opacity: 1;
-}
-.active4 {
-  transform: translate(150%, -260%);
-  opacity: 1;
-}
-.active5 {
-  transform: translate(200%, -100%);
-  opacity: 1;
+  transform: translateY(-100px);
 }
 
 /* burger menu*/
@@ -1625,7 +1648,7 @@ body {
   background-image: url("https://www.toptal.com/designers/subtlepatterns/patterns/concrete-texture.png");
   display: flex;
   /* flex-wrap: wrap; */
-  height: 50%;
+  height: 50vh;
   align-items: center;
   justify-content: center;
   padding: 0 20px;
@@ -1743,7 +1766,7 @@ body {
 }
 
 .rating-input {
-  padding: 1rem;
+  height: 150px !important;
 }
 
 .rating-button {
@@ -1800,7 +1823,7 @@ body {
   display: none;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
+  /* justify-content: center; */
   gap: 18px;
 }
 
@@ -1886,20 +1909,7 @@ body {
   font-size: 16px;
 }
 
-.profile-pic-div-outer{
-    width: 200px;
-  height: 200px;
 
-  position: relative;
-
-  border-radius: 50%;
-  overflow: hidden;
-}
-.profile-pic-div-outer img{
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-}
 /*paramedic home*/
 
 .paramedic-home-header {
@@ -1970,7 +1980,7 @@ body {
   position: absolute;
   bottom: 0;
   width: 100vw;
-  height: 40vh;
+  height: 23vh;
   background-color: #ffffff;
   padding: 1rem;
 }
@@ -1987,9 +1997,9 @@ body {
   border-radius: 50%;
 }
 .request-section2 {
-  margin-top: auto;
   display: flex;
-  gap: 10px;
+  margin-top: 15px;
+  margin-left: 2vw;
 }
 .request-section3 {
   display: flex;
@@ -2005,8 +2015,9 @@ body {
 
 .accept-button {
   background-color: #47cf73;
-  width: 150px;
+  width: 300px;
   height: 41px;
+  margin-bottom: 1.5vh;
   outline: none;
   border: none;
   color: white;
@@ -2081,24 +2092,21 @@ th {
   left: 50%;
   transform: translateX(-50%);
   border-radius: 5px;
-  
 }
 
 .container-1 input {
   display: block;
   margin-bottom: 20px;
+  height: 30px;
   border: none;
   outline: none;
   padding-left: 15px;
   background-color: #eee;
   text-transform: capitalize;
+  color: #222831;
   border-radius: 5px;
 }
-.container-1 label {
-  color: var(--light);
-   display: block;
-   padding-bottom: 10px;
-}
+
 .submit-container {
   display: flex;
   justify-content: center;
@@ -2210,13 +2218,13 @@ td {
 table {
   border-collapse: collapse;
   width: 100%;
-  
 }
 
 td,
 th {
   text-align: center;
   padding-left: 20px;
+
 }
 
 .admin-sidebar {
@@ -2346,7 +2354,7 @@ th {
 
 .history-main {
   position: absolute;
-  top: 20%;
+  top: 7%;
   width: calc(100vw - 70px);
   transform: translateX(70px);
   padding: 2rem;
@@ -2367,7 +2375,6 @@ th {
   flex-direction: column;
   border-radius: 5%;
   position: relative;
-  cursor: pointer;
 }
 .rides-section1 {
   margin-bottom: 10px;
@@ -2412,6 +2419,11 @@ th {
   position: relative;
 }
 
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 .users-container{
     width: calc(100vw - 70px); 
     display: flex;
@@ -2430,10 +2442,10 @@ th {
     height: 350px;
     background-color: rgb(226, 225, 223);
     display: flex;
+    border: 1px solid rgba(255, 0, 0, 0.199);
     border-radius: 3%;
     position: relative;
-  border: 1px solid rgba(0, 128, 0, 0.397);
-    /* cursor: pointer; */
+    cursor: pointer;
 }
 .first-aid-img {
   width: 80px;
@@ -2522,9 +2534,9 @@ th {
     top: 0;
 }
 .national-id-overlay img{
-  width: 33%;
-  height: 90%;
-  object-fit: contain;
+    width: 50%;
+    height: 45%;
+    object-fit: contain;
 }
 .national-id-overlay i {
     position: absolute;
@@ -2588,4 +2600,4 @@ th {
 .users .national-id-overlay {
   width: 500px;
   height: 250px;
-} 
+}
