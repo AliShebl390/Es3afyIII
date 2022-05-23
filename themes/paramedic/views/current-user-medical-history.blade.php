@@ -11,10 +11,6 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
-    <script
-      src="https://kit.fontawesome.com/869711923d.js"
-      crossorigin="anonymous"
-    ></script>
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -38,8 +34,8 @@
   <body>
     <div class="mh-container">
       <div class="mh-header">
-        <a href="paramedicHome">
-          <i class="fas fa-arrow-alt-left"></i>
+        <a href="home">
+          <i style="font-size: 32px;" class="fas fa-arrow-alt-left"></i>
         </a>
         <h1><span class="header-span">Me</span>dical history</h1>
       </div>
@@ -51,7 +47,7 @@
             style="display: flex; flex-direction: column; gap: 15px"
             class=""
           >
-            <p style="padding-top: 20px">example</p>
+            <p style="padding-top: 5px">example</p>
             <p>example</p>
             <p>example</p>
             <p>example</p>
@@ -71,7 +67,7 @@
             "
             class=""
           >
-            <p style="padding-top: 20px">example</p>
+            <p style="padding-top: 5px">example</p>
             <p>example</p>
             <p>example</p>
             <p>example</p>
@@ -91,7 +87,7 @@
             "
             class=""
           >
-            <p style="padding-top: 20px">example</p>
+            <p style="padding-top: 5px">example</p>
             <p>example</p>
             <p>example</p>
             <p>example</p>
@@ -111,7 +107,7 @@
             "
             class=""
           >
-            <p style="padding-top: 20px">example</p>
+            <p style="padding-top: 5px">example</p>
             <p>example</p>
             <p>example</p>
             <p>example</p>

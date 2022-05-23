@@ -54,7 +54,7 @@
         <img class="user-img" src="/images/usersimgs/{{$user->image}}" alt="" />
         <div class="">
           <h2>{{$user->name}}</h2>
-          <a style="margin-top: 10px; display: block; color: var(--light)" href="http://es3afy.test/paramedic/current-user-medical-history">View medical history</a>
+          <a style="margin-top: 10px; display: block; color: var(--light)" href="http://es3afyiii.test/paramedic/current-user-medical-history">View medical history</a>
         </div>
       </div>
 

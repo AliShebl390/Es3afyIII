@@ -38,9 +38,6 @@ Route::get('/medical-history', function () {
 Route::get('/medical-history-menu', function () {
     return view('medical-history-menu');
 });
-Route::get('/paramedic/current-user-medical-history', function () {
-    return view('/paramedic/current-user-medical-history');
-});
 
 
 Route::post('store-medical', [medicalhistoryController::class,'store']);

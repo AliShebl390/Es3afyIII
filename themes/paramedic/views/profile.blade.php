@@ -84,24 +84,6 @@
 
         <h5>Email</h5>
         <p class="email">{{$para->email}}</p>
-
-        <h5>Password</h5>
-        <div style="display: flex; align-items: center" class="">
-          <input
-            class="profile-input"
-            type="password"
-            placeholder="***********"
-            disabled
-            style="caret-color: transparent"
-            ;
-          />
-
-          <a style="transform: translateY(-30%)"
-            href="/forget-passowrd-from-profile">
-            <span style="font-size: 12px; color: var(--light)"
-              >change password</span>
-            </a>
-        </div>
       </div>
     </div>
     </form>

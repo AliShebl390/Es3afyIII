@@ -19,6 +19,9 @@ Route::prefix('paramedic')->middleware('theme:paramedic')->name('paramedic.')->g
         Route::get('/arrived', function () {
             return view('/arrived');
         });
+        Route::get('/current-user-medical-history', function () {
+            return view('/current-user-medical-history');
+        });
 
         // Route::get('/after-paramedic-accept-request', function () {
         //     return view('/after-paramedic-accept-request');
