@@ -4,6 +4,7 @@
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <!-- Font Awsome library -->
     <link
     rel="stylesheet"
@@ -36,16 +37,19 @@
         <img src="./images/3855168.jpg" alt="">
 
         <h4>Ambulance And Responders Are On The Way</h4>
-       
+        
         <p>Speak Carfully To The Person Until The Paramedicals Arrive, Responders Are On The Way </p>
-       <a href="tracking">
 
-           <button class="button1 button-custom">track responders</button>
-       </a>
-       <a href="home">
-           <button class="button2">cancel request</button>
-       </a>
+        <form method="post" action="{{url('request')}}">
+            @csrf   
+            <input type="text" name="userId" hidden>
+            <input type="text" name="timedate" hidden>
+            <button class="button1 button-custom">track responders</button>
+        </form>
+            <a href="home">
+                <button class="button2">cancel request</button>
+            </a>
+        </div>
     </div>
-</div>
 </body>
 </html>

@@ -69,7 +69,7 @@
             <form method="post" enctype="multipart/form-data" action="{{url('store-nidfront')}}">
               @csrf 
               {{-- <input type="text"  value="{{$user->id}}"/> --}}
-                  <input type="file" id="file-id" name="front"/>
+                  <input type="file" id="file-id" name="front" required/>
                   <label for="file-id" id="upload-btn-id"> choose file </label>
                 </div>
                 <div class="bt2">

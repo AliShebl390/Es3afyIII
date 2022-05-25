@@ -67,7 +67,7 @@
           <div class="bt1">
             <form method="post" enctype="multipart/form-data" action="{{url('store-nidback')}}">
               @csrf 
-          <input type="file" id="file-id" name="back" />
+          <input type="file" id="file-id" name="back" required/>
           <label for="file-id" id="upload-btn-id"> choose file </label>
           </div>
           <div class="bt2">

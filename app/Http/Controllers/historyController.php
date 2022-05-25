@@ -42,9 +42,14 @@ class historyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
-        //
+        $req = history::Where('userid',Auth::user()->id)->first();
+        $req = new history ;
+        $req->userId =Auth::user()->id;
+        $req->timedate =date('Y-m-d H:i:s')->timedate;
+        $req->save();
+        return redirect('/responders-on-the-way');
     }
 
     /**

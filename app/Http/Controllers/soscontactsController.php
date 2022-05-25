@@ -16,9 +16,13 @@ class soscontactsController extends Controller
     public function index()
     {
         $All_soscontacts = soscontacts::Where('userid',Auth::user()->id)->get();
-        return view('sos-contacts', compact('All_soscontacts'));  
+        $count = soscontacts::Where('userid',Auth::user()->id)->count();
+        return view('sos-contacts', compact('All_soscontacts', 'count'));  
     }
 
+
+
+    
     public function showSos()
     {
         // dd($soscontacts);

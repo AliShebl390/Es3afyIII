@@ -31,6 +31,7 @@
                 </a>
                 <h1><span>So</span>s Contacts</h1>
             </div>
+            @if ($count<5)
             <div class="add-new">
                 <a href="/sos-add-new-contact">
                     <div class="add-c"><i class="fas fa-plus"></i></div>
@@ -40,6 +41,7 @@
                     <p> Maximmum: 5 Contacts</p>
                 </div>
             </div>
+            @endif
             @foreach ($All_soscontacts as $onesos)
             <div class="contact">
                 <input name="userid" type="text" value="{{$onesos->userid}}" hidden>

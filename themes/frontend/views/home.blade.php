@@ -51,7 +51,7 @@
   <div class="home-header">
      <a href="profile">
        <div class="profile-image">
-         {{-- <img id="profile-pic" src="images/{{$soscontacts->image}}" alt=""/>  --}}
+         <img id="profile-pic" src="images/usersimgs/{{$soscontacts[0]->image}}"alt=""/> 
        </div>
      </a>
   </div>
@@ -65,8 +65,7 @@
     <div class="sos-section">
       <i class="fas fa-phone-alt phone-icon "></i> 
       
-      
-        <div class="sos-contact-div">
+            <div class="sos-contact-div">
           @foreach ($soscontacts as $sos)  
           <a href="tel:+20{{$sos->phonenumber}}">
             <img class="sos-contact"  src="images/usersimgs/{{$sos->sosphoto}}" alt="">

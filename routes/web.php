@@ -30,6 +30,13 @@ Route::get('/home', function () {
     return view('home');
 })->middleware(['auth'])->name('home');
 
+// request for user
+
+Route::post('request', [historyController::class,'create']);
+
+Route::get('/respondersOnTheWay', function () {
+    return view('responders-on-the-way');
+});
 
 // Medical History
 
@@ -84,10 +91,6 @@ Route::get('/req-comp-for-user',[historycontroller::class,'index_medical']);
 Route::get('/req-details/{id}', [historycontroller::class,'show']);
 
 // End Ratin
-
-Route::get('/respondersOnTheWay', function () {
-    return view('responders-on-the-way');
-});
 
 Route::get('/sos-add-new-contact', function () {
     return view('sos-add-new-contact');

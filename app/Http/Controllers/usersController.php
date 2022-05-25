@@ -105,10 +105,12 @@ class userscontroller extends Controller
         $user->name =$request->name;
         $user->email =$request->email;
         $user->phonenum =$request->phonenum;
-        $file=$request->image;
-        $imageName = time().'.'.$request->image->extension();  
-        $file->move(public_path('images/usersimgs').'/',$imageName);
-        $user->image =$imageName;
+        if($request->image!=null){
+            $file=$request->image;
+            $imageName = time().'.'.$request->image->extension();  
+            $file->move(public_path('images/usersimgs').'/',$imageName);
+            $user->image =$imageName;
+        }
         $user->save();
         $redirect = '/profile';
         return redirect($redirect);
