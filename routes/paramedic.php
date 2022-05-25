@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Paramedic\P_AuthController;
 use App\Http\Controllers\userscontroller;
+use App\Http\Controllers\getController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('paramedic')->middleware('theme:paramedic')->name('paramedic.')->group(function () {
@@ -29,6 +30,11 @@ Route::prefix('paramedic')->middleware('theme:paramedic')->name('paramedic.')->g
         Route::get('/profile', [P_AuthController::class,'showpara']);
         Route::post('/update', [P_AuthController::class,'update']);
 
-        route::get('/after-paramedic-accept-request/{id}',[userscontroller::class,'index_para']);
+        route::get('/after-paramedic-accept-request/{id}',[usersController::class,'index_para']);
+
+        Route::get('/get-in-touch', function () {
+            return view('get-in-touch');
+        });
+        Route::post('store-get-para', [getController::class,'store_para']);
     });
 });

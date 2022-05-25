@@ -6,16 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Font Awsome library -->
     <link
-      rel="stylesheet"
-      href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
-      integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
-      crossorigin="anonymous"
-    />
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"/>
     <meta name="csrf-token" content="{{ csrf_token() }}"> <!-- meta for protection -->
-    <script
-      src="https://kit.fontawesome.com/869711923d.js"
-      crossorigin="anonymous"
-    ></script>
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -40,7 +35,7 @@
     <div class="add-new-container sos-contact-container">
       <div class="add-new-content s-c-content">
         <div class="s-c-upper">
-          <a href="sos-contacts"><i class="fas fa-arrow-alt-left"></i></a>
+          <a href="sos-contacts"><i style="font-size: 35px" class="fas fa-arrow-alt-left"></i></a>
           <h1><span>Ne</span>w Contact</h1>
         </div>
         <form method="post" action="{{url('store-newContact')}}" enctype="multipart/form-data">

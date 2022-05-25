@@ -97,7 +97,7 @@
               <label for="phonenumber" class="col-md-4 col-form-label text-md-right">{{ __('phonenumber') }}</label>
 
               <div class="col-md-6">
-                  <input id="age" type="tel" class="input-custom" name="phonenumber" required maxlength="13">
+                  <input id="age" type="number" class="input-custom" name="phonenumber" required maxlength="13">
               </div>
           </div>
 

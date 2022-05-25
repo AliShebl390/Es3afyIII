@@ -78,7 +78,7 @@
                     </div>
                     @error('email')
                         <span style="margin-top: -15px;
-                      " class="invalid-feedback" role="alert">
+                        margin-bottom: -15px;" class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>
                     @enderror
@@ -92,7 +92,7 @@
                       </div>
                     </div>
                     @error('password')
-                        <span style="margin-top: -15px;
+                        <span style="margin-top: -15px;margin-bottom: -15px;
                       " class="invalid-feedback" role="alert">
                             <strong>{{ $message }}</strong>
                         </span>

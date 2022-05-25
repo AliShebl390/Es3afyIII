@@ -21,11 +21,11 @@
       sizes="32x32"
       href="images/logo png.png"
     />
-  <link rel="stylesheet" href="./css/stylesheet.css" />
-  <link rel="stylesheet" href="./css/media.css">
+  <link rel="stylesheet" href="../css/stylesheet.css" />
+  <link rel="stylesheet" href="../css/media.css">
   </head>
   <body>
-    <a href="home">
+    <a href="/home">
       <div class="tracking-header">
           <button style="border-radius: 5px" class="button2">cancel request</button>
         </div>
@@ -33,28 +33,11 @@
         <div id="map"></div>
       <div class="tracking-footer">
  <div class="first-section">
-   <img src="/images/person.jpg" alt="">
-          <h3>kendall roy</h3>
-      <i class="fas fa-phone-alt"></i>
-      <i class="fas fa-comment-alt"></i>
-    </div>
-
-    <div class="third-section">
-        <div class="text-adjust2">
-            <h5>AVG SPEED</h5>
-            <P>120</P>
-            <P>km/h</P>
-        </div> 
-        <div class="text-adjust2">
-            <h5>distance left</h5>
-            <P>20</P>
-            <P>km/h</P>
-        </div>
-         <div class="text-adjust2">
-            <h5>estimated time</h5>
-            <P>3:30</P>
-            <P>pm</P>
-        </div>
+   <img src="/images/usersimgs/{{$para->image}}" alt="">
+          <h3>{{$para->name}}</h3>
+          <a href="tel:+20{{$para->phonenumber}}">
+            <i style="font-size: 35px" class="fas fa-phone-alt"></i>
+          </a>
     </div>
   </div>
   <script>

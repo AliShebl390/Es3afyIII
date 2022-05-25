@@ -90,4 +90,10 @@ class P_AuthController extends Controller
         $redirect = 'paramedic/profile';
         return redirect($redirect);
     }
+
+    public function index_para_user($id)
+    {
+        $para = Paramedic::find($id);
+        return view('/tracking', compact('para'));
+    }
 }

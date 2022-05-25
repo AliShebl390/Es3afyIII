@@ -19,8 +19,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Es3afy</title>
-    <link rel="stylesheet" href="css/stylesheet.css">
-    <link rel="stylesheet" href="css/media.css"> 
+    <link rel="stylesheet" href="../css/stylesheet.css">
+    <link rel="stylesheet" href="../css/media.css"> 
     <link
       rel="icon"
       type="image/png"
@@ -31,11 +31,11 @@
 <body>
     <div class="g-container">
         
-        <img src="images/istockphoto-1215342220-612x612.jpg" alt="">
+        <img src="../images/istockphoto-1215342220-612x612.jpg" alt="">
         <a href="home"><i style="font-size: 35px" class="arr fas fa-arrow-alt-left"></i></a>
         <div class="g-content">
             <h1>Get in touch!</h1>
-            <form method="post" action="{{url('store-get')}}" enctype="multipart/form-data">
+            <form method="post" action="{{url('paramedic/store-get-para')}}" enctype="multipart/form-data">
                 @csrf
                 <div class="con1">
                     <label for="name">Name</label> 

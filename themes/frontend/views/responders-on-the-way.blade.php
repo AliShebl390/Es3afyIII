@@ -5,8 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Font Awsome library -->
-    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
-    <script src="https://kit.fontawesome.com/869711923d.js" crossorigin="anonymous"></script>  
+    <link
+    rel="stylesheet"
+    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+    crossorigin="anonymous"/> 
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -26,11 +29,9 @@
 </head>
 <body>
 <div class="responders-container">
-    <div class="responders-header">
         <a href="home">
-                <i class="fas fa-arrow-alt-left"></i>
+                <i style="font-size: 35px; margin-top: 15px;margin-left: 15px;" class="fas fa-arrow-alt-left"></i>
         </a>
-    </div>
     <div class="responders-main">
         <img src="./images/3855168.jpg" alt="">
 

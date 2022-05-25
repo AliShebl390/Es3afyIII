@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Paramedic\P_AuthController;
 use App\Http\Controllers\historycontroller;
 use App\Http\Controllers\userscontroller;
 use App\Http\Controllers\medicalhistoryController;
@@ -99,10 +100,10 @@ Route::get('/home',[soscontactsController::class,'showSos']);
 Route::get('/success', function () {
     return view('success');
 });
-Route::get('/tracking', function () {
-    return view('tracking');
-});
-
+// Route::get('/tracking', function () {
+//     return view('tracking');
+// });
+route::get('/tracking/{id}',[P_AuthController::class,'index_para_user']);
 
 // get in touch
 Route::get('/get-in-touch', function () {
@@ -130,7 +131,6 @@ Route::get('/index', function () {
 Route::get('/pass', function () {
     return view('');
 });
-
 
 // --------------------------
 require __DIR__.'/auth.php';

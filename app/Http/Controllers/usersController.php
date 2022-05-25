@@ -29,11 +29,11 @@ class userscontroller extends Controller
         return view('/after-paramedic-accept-request', compact('user'));
     }
 
-    public function index_para_home($id)
-    {
-        $user = User::find($id);
-        return view('paramedic/paramedicHome', compact('user'));
-    }
+    // public function index_para_home($id)
+    // {
+    //     $user = User::find($id);
+    //     return view('paramedic/Home', compact('user'));
+    // }
 
     /**
      * Show the form for creating a new resource.
