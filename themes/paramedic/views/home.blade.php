@@ -72,24 +72,27 @@
       </label>
       <p id="text">Offline</p>
       <a href="http://es3afyiii.test/paramedic/profile">
-        <img class="paramedic-img" src="/images/usersimgs/{{$para->image}}" alt="" />
+        {{-- <img class="paramedic-img" src="/images/usersimgs/{{Auth::user()->image}}" alt="" /> --}}
       </a>
     </div>
     <div id="map"></div>
 
     <div class="request-section" style="height: 25vh;">
+      @foreach ($reqs as $onereq)
       <div class="request-section1">
         <img class="user-img" src="/images/person.jpg" alt="" />
         <div class="">
-          <h2>Patient's name</h2>
+          <h2>{{$onereq->userid}}</h2>
         </div>
       </div>
 
       <div class="request-section3">
-        <a href="http://es3afyiii.test/paramedic/after-paramedic-accept-request">
+            
+        <a href="after-paramedic-accept-request/{{$onereq->userid}}">
           <button style="cursor: pointer; width:250px;" class="accept-button">Accept</button>
         </a>
       </div>
+      @endforeach
     </div>
 <script>
   let map;

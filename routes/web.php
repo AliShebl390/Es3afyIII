@@ -32,7 +32,7 @@ Route::get('/home', function () {
 
 // request for user
 
-Route::post('request', [historyController::class,'create']);
+Route::get('request', [historyController::class,'create']);
 
 Route::get('/respondersOnTheWay', function () {
     return view('responders-on-the-way');
@@ -99,7 +99,6 @@ Route::post('store-newContact', [soscontactsController::class,'store']);
 Route::get('/sos-contacts',[soscontactsController::class,'index']);
 Route::get('delete/{id}',[soscontactsController::class,'delete']);
 Route::get('/home',[soscontactsController::class,'showSos']);
-
 Route::get('/success', function () {
     return view('success');
 });
@@ -107,6 +106,7 @@ Route::get('/success', function () {
 //     return view('tracking');
 // });
 route::get('/tracking/{id}',[P_AuthController::class,'index_para_user']);
+route::get('/respondersOnTheWay/{id}',[usersController::class,'tracking']);
 
 // get in touch
 Route::get('/get-in-touch', function () {

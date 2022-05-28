@@ -40,12 +40,14 @@
         
         <p>Speak Carfully To The Person Until The Paramedicals Arrive, Responders Are On The Way </p>
 
-        <form method="post" action="{{url('request')}}">
+        {{-- <form method="post" action="{{url('request')}}">
             @csrf   
             <input type="text" name="userId" hidden>
-            <input type="text" name="timedate" hidden>
-            <button class="button1 button-custom">track responders</button>
-        </form>
+            <input type="text" name="timedate" hidden> --}}
+            <a href="/request?id={{Auth::user()->id}}">
+                <button class="button1 button-custom">track responders</button>
+            </a>
+        {{-- </form> --}}
             <a href="home">
                 <button class="button2">cancel request</button>
             </a>

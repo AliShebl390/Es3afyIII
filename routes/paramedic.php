@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Paramedic\P_AuthController;
 use App\Http\Controllers\userscontroller;
+use App\Http\Controllers\historyController;
 use App\Http\Controllers\getController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,5 +37,6 @@ Route::prefix('paramedic')->middleware('theme:paramedic')->name('paramedic.')->g
             return view('get-in-touch');
         });
         Route::post('store-get-para', [getController::class,'store_para']);
+        Route::get('home',[historycontroller::class,'showReq']);
     });
 });

@@ -42,16 +42,21 @@ class historyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create(Request $request)
+    public function create()
     {
         $req = history::Where('userid',Auth::user()->id)->first();
         $req = new history ;
         $req->userId =Auth::user()->id;
-        $req->timedate =date('Y-m-d H:i:s')->timedate;
+        // $req->timedate =date('Y-m-d H:i:s')->timedate;
         $req->save();
-        return redirect('/responders-on-the-way');
+        return redirect('/arrived');
     }
-
+    // public function tracking($id)
+    // {
+    //     $contact=soscontacts::find($id);
+    //     $contact->delete();
+    //     return redirect('sos-contacts');    
+    // }
     /**
      * Store a newly created resource in storage.
      *
@@ -84,9 +89,10 @@ class historyController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit()
+    public function showReq()
     {
-        //
+        $reqs = history::where('paramidicid')->get();
+        return view('home', compact('reqs'));
     }
 
     /**

@@ -116,15 +116,7 @@ class userscontroller extends Controller
         return redirect($redirect);
     }
 
-    public function update_password(Request $request)
-    {
-        // $password = user::find(Auth::user()->id);
-        // $password->password =$request->password;
-        // // $password -> Hash::make($request->password);
-        // $password->save();
-        // $redirect = '/home';
-        // return redirect($redirect);
-    }
+    
     /**
      * Remove the specified resource from storage.
      *
