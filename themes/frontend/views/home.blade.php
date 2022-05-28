@@ -51,7 +51,7 @@
   <div class="home-header">
      <a href="profile">
        <div class="profile-image">
-         <img id="profile-pic" src="images/usersimgs/{{$soscontacts[0]->image}}"alt=""/> 
+         <img id="profile-pic" src="images/usersimgs/{{Auth::user()->image}}"alt=""/> 
        </div>
      </a>
   </div>

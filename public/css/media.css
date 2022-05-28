@@ -247,6 +247,10 @@
 .content-container-2{
     top: 4.5%;
   }
+
+  .section-1 select{
+    height: 55px;
+  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1024px) {
