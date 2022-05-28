@@ -26,6 +26,7 @@ class soscontactsController extends Controller
     public function showSos()
     {
         // // dd($soscontacts);
+        
         // $soscontacts = soscontacts::join('users', 'users.id', '=', 'soscontacts.userid')
         // ->Where('userid',Auth::user()->id)
         // ->select('soscontacts.*', 'users.image')->get();

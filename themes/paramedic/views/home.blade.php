@@ -72,7 +72,7 @@
       </label>
       <p id="text">Offline</p>
       <a href="http://es3afyiii.test/paramedic/profile">
-        {{-- <img class="paramedic-img" src="/images/usersimgs/{{Auth::user()->image}}" alt="" /> --}}
+        <img class="paramedic-img" src="/images/usersimgs/{{Auth::guard('paramedic')->user()->image}}" alt="" />
       </a>
     </div>
     <div id="map"></div>
@@ -88,12 +88,12 @@
 
       <div class="request-section3">
             
-        <a href="after-paramedic-accept-request/{{$onereq->userid}}">
+        <a href="after-paramedic-accept-request/{{$onereq->userid}}/{{$onereq->id}}">
           <button style="cursor: pointer; width:250px;" class="accept-button">Accept</button>
         </a>
       </div>
-      @endforeach
     </div>
+    @endforeach
 <script>
   let map;
   function initMap() {

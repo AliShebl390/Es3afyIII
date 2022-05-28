@@ -5,6 +5,12 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use Kreait\Firebase;
+use Kreait\Firebase\Factory;
+use Kreait\Firebase\ServiceAccount;
+use Kreait\Firebase\Database;
+use App\Models\history;
+
 
 class userscontroller extends Controller
 {
@@ -23,11 +29,7 @@ class userscontroller extends Controller
         // return view('/user', compact('allUsers'));
     }
 
-    public function index_para($id)
-    {
-        $user = User::find($id);
-        return view('/after-paramedic-accept-request', compact('user'));
-    }
+
 
     // public function index_para_home($id)
     // {
@@ -127,4 +129,32 @@ class userscontroller extends Controller
     {
         //
     }
+    
+
+        public function index_para($id,$historyID)
+        {
+            $user = User::find($id);
+            $userRequist= history::find($historyID);
+            $userRequist->paramidicid = Auth::user()->id; 
+            $userRequist->save();
+            // update para id
+
+
+            $firebase = (new Factory)
+            ->withServiceAccount(__DIR__.'/gps-traking-152ff-firebase-adminsdk-75mce-b0cd18ac38.json')
+            ->withDatabaseUri('https://gps-traking-152ff-default-rtdb.europe-west1.firebasedatabase.app');
+            $database = $firebase->createDatabase();
+        // $database = $firebase->getDatabase();
+            $newPost = $database
+            ->getReference($id.'/location');
+            //$newPost->getKey(); // => -KVr5eu8gcTv7_AHb-3-
+            //$newPost->getUri(); // => https://my-project.firebaseio.com/blog/posts/-KVr5eu8gcTv7_AHb-3-
+            //$newPost->getChild('title')->set('Changed post title');
+            $newPost->getValue(); // Fetches the data from the realtime database
+            //$newPost->remove();
+            // echo"<pre>";
+            $user_loaction =$newPost->getvalue() ;
+            return view('/after-paramedic-accept-request', compact('user','user_loaction'));
+            //dd(['latitude']);
+        }
 }

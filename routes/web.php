@@ -139,3 +139,6 @@ Route::get('/pass', function () {
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';
 require __DIR__.'/paramedic.php';
+
+
+// Route::get('/firbase/{id}/{historyID}', [userscontroller::class,'firbase']);

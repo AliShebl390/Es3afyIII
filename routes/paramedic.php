@@ -31,7 +31,9 @@ Route::prefix('paramedic')->middleware('theme:paramedic')->name('paramedic.')->g
         Route::get('/profile', [P_AuthController::class,'showpara']);
         Route::post('/update', [P_AuthController::class,'update']);
 
-        route::get('/after-paramedic-accept-request/{id}',[usersController::class,'index_para']);
+        route::get('/after-paramedic-accept-request/{id}/{historyID}',[usersController::class,'index_para']);
+
+        // route::get('/after-paramedic-accept-request/{id}/{historyID}',[usersController::class,'destroy']);
 
         Route::get('/get-in-touch', function () {
             return view('get-in-touch');

@@ -50,8 +50,10 @@
 
     <div class="request-section" style="height: 40vh;">
       <!--view user medical history when accept -->
+      
       <div class="request-section1">
         <img class="user-img" src="/images/usersimgs/{{$user->image}}" alt="" />
+        <a href="https://www.google.com/maps/dir//{{$user_loaction['latitude']}},{{$user_loaction['longitude']}}">Go To Direction</a>
         <div class="">
           <h2>{{$user->name}}</h2>
           <a style="margin-top: 10px; display: block; color: var(--light)" href="http://es3afyiii.test/paramedic/current-user-medical-history">View medical history</a>
@@ -87,11 +89,11 @@
       let map;
       function initMap() {
         map = new google.maps.Map(document.getElementById("map"), {
-          center: { lat: 30.0592099, lng: 31.3074362},
+          center: { lat: {{$user_loaction['latitude']}}, lng: {{$user_loaction['longitude']}}},
           zoom: 15,
           panControl: true,
         });
-        var markercenter = new google.maps.LatLng(30.0592099,31.3074362);
+        var markercenter = new google.maps.LatLng( {{$user_loaction['latitude']}},{{$user_loaction['longitude']}});
         var marker = new google.maps.Marker({
           position:markercenter,
         });

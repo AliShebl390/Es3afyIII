@@ -5,6 +5,10 @@ use App\Models\history;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
+use Kreait\Firebase;
+use Kreait\Firebase\Factory;
+use Kreait\Firebase\ServiceAccount;
+use Kreait\Firebase\Database;
 
 class historyController extends Controller
 {
@@ -23,7 +27,6 @@ class historyController extends Controller
         ->join('users','users.id', "=" , 'history.userid')
         ->select('history.*', 'users.name as username', 'users.image as userimage', 'paramedics.name as paraname')
         ->get();
-        // dd($All_history);
         return view('/History-main',compact('All_history'));
     }
 
@@ -91,7 +94,7 @@ class historyController extends Controller
      */
     public function showReq()
     {
-        $reqs = history::where('paramidicid')->get();
+        $reqs = history::where('paramidicid',null)->get();
         return view('home', compact('reqs'));
     }
 
@@ -122,4 +125,5 @@ class historyController extends Controller
     {
         //
     }
+   
 }
