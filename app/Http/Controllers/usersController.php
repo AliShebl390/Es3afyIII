@@ -5,10 +5,6 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
-use Kreait\Firebase;
-use Kreait\Firebase\Factory;
-use Kreait\Firebase\ServiceAccount;
-use Kreait\Firebase\Database;
 use App\Models\history;
 
 
@@ -117,7 +113,6 @@ class userscontroller extends Controller
         $redirect = '/profile';
         return redirect($redirect);
     }
-
     
     /**
      * Remove the specified resource from storage.
@@ -125,36 +120,20 @@ class userscontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
-    {
-        //
-    }
-    
-
         public function index_para($id,$historyID)
         {
             $user = User::find($id);
-            $userRequist= history::find($historyID);
-            $userRequist->paramidicid = Auth::user()->id; 
-            $userRequist->save();
+            // send user data by user id
+
             // update para id
+            $userRequest= history::find($historyID);
+            $userRequest->paramidicid = Auth::user()->id; 
+            $userRequest->save();
+            // end update para id
 
+            $user_loaction = history::find($historyID);
+            // find location by history id
 
-            $firebase = (new Factory)
-            ->withServiceAccount(__DIR__.'/gps-traking-152ff-firebase-adminsdk-75mce-b0cd18ac38.json')
-            ->withDatabaseUri('https://gps-traking-152ff-default-rtdb.europe-west1.firebasedatabase.app');
-            $database = $firebase->createDatabase();
-        // $database = $firebase->getDatabase();
-            $newPost = $database
-            ->getReference($id.'/location');
-            //$newPost->getKey(); // => -KVr5eu8gcTv7_AHb-3-
-            //$newPost->getUri(); // => https://my-project.firebaseio.com/blog/posts/-KVr5eu8gcTv7_AHb-3-
-            //$newPost->getChild('title')->set('Changed post title');
-            $newPost->getValue(); // Fetches the data from the realtime database
-            //$newPost->remove();
-            // echo"<pre>";
-            $user_loaction =$newPost->getvalue() ;
             return view('/after-paramedic-accept-request', compact('user','user_loaction'));
-            //dd(['latitude']);
         }
 }

@@ -43,7 +43,7 @@
       crossorigin="anonymous"
     />
   </head>
-  <body>
+  <body style="background-color: #eee">
     <div class="burger-menu-container" id="lines-container">
       <div class="line line1" id="bar1"></div>
       <div class="line line2" id="bar2"></div>
@@ -66,23 +66,19 @@
 
     <div class="background"></div>
 
-    <div class="paramedic-home-header">
-      <label class="switch red">
-        <input id="myCheck" type="checkbox" onclick="myFunction()" /><i></i>
-      </label>
-      <p id="text">Offline</p>
-      <a href="http://es3afyiii.test/paramedic/profile">
+    <div class="paramedic-home-header"  style="justify-content: flex-end; background-color: #eee">
+      <a href="profile">
         <img class="paramedic-img" src="/images/usersimgs/{{Auth::guard('paramedic')->user()->image}}" alt="" />
       </a>
     </div>
-    <div id="map"></div>
+    <div style="height: 75%" id="map"></div>
 
-    <div class="request-section" style="height: 25vh;">
-      @foreach ($reqs as $onereq)
+    @foreach ($reqs as $onereq)
+    <div class="request-section" style="height: 25vh; position: relative;">
       <div class="request-section1">
-        <img class="user-img" src="/images/person.jpg" alt="" />
+        <img class="user-img" src="/images/usersimgs/{{$onereq->userimage}}" alt="" />
         <div class="">
-          <h2>{{$onereq->userid}}</h2>
+          <h2>{{$onereq->username}}</h2>
         </div>
       </div>
 
