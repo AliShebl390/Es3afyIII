@@ -43,11 +43,13 @@ class historyController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function create()
+    public function create(Request $request)
     {
         $req = history::Where('userid',Auth::user()->id)->first();
         $req = new history ;
         $req->userId =Auth::user()->id;
+        $req->longitude =$request->longitude;
+        $req->latitude	 =$request->latitude;
         // $req->timedate =date('Y-m-d H:i:s')->timedate;
         $req->save();
         return redirect('/arrived');
@@ -97,8 +99,8 @@ class historyController extends Controller
         ->select('history.*', 'users.name as username', 'users.image as userimage')
         ->where('paramidicid',null)
         ->get();
-        return view('home', compact('reqs'));
-        // dd($reqs);
+        // return view('home', compact('reqs'));
+        dd($reqs);
     }
 
     /**

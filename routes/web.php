@@ -32,12 +32,13 @@ Route::get('/home', function () {
 
 // request for user
 
-Route::get('request', [historyController::class,'create']);
+Route::post('request', [historyController::class,'create']);
 
 Route::get('/respondersOnTheWay', function () {
     return view('responders-on-the-way');
 });
 
+// End request
 // Medical History
 
 Route::get('/medical-history', function () {

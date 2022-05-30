@@ -40,18 +40,38 @@
         
         <p>Speak Carfully To The Person Until The Paramedicals Arrive, Responders Are On The Way </p>
 
-        {{-- <form method="post" action="{{url('request')}}">
+        <form method="post" action="{{url('request')}}">
             @csrf   
             <input type="text" name="userId" hidden>
-            <input type="text" name="timedate" hidden> --}}
-            <a href="/request?id={{Auth::user()->id}}">
-                <button class="button1 button-custom">track responders</button>
-            </a>
-        {{-- </form> --}}
+            <input type="text" name="timedate" hidden>
+            <input id="long" type="text" name="longitude" hidden>
+            <input id="lat" type="text" name="latitude" hidden>
+                <button type="submit" class="button1 button-custom">track responders</button>
+        </form>
             <a href="home">
                 <button class="button2">cancel request</button>
             </a>
         </div>
     </div>
+<script>
+const lat = document.getElementById("lat");
+const long = document.getElementById("long");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        console.log('error')
+    }
+}
+
+function showPosition(position) {
+console.log( "Latitude: " + position.coords.latitude + 
+"<br>Longitude: " + position.coords.longitude);
+lat.value = position.coords.latitude;
+long.value = position.coords.longitude;
+}
+getLocation();
+// console.log('hi')
+    </script>
 </body>
 </html>
