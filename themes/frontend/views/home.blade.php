@@ -38,13 +38,16 @@
       <a href="sos-contacts">SOS contacts</a>
       <a href="req-comp-for-user">my requests</a>
       <a href="get-in-touch">contact us</a>
+
         <a class="dropdown-item" href="<?php echo e(route('logout')); ?>"
           onclick="event.preventDefault();                        document.getElementById('logout-form').submit();">
             <?php echo e(__('Logout')); ?>
         </a>
+        
         <form id="logout-form" action="<?php echo e(route('logout')); ?>" method="POST" class="d-none">
             <?php echo csrf_field(); ?>
         </form>
+
  </ol>
 </div>
 <div class="background"></div>

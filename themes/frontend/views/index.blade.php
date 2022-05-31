@@ -13,6 +13,10 @@
     <link rel="manifest" href="manifest.json" />
     <title>Es3afy</title>
     <link rel="icon" type="image/png" sizes="32x32" href="images/Untitled-1.png"/>
+    <!-- PWA  -->
+<meta name="theme-color" content="#6777ef"/>
+<link rel="apple-touch-icon" href="{{ asset('logo.PNG') }}">
+<link rel="manifest" href="{{ asset('/manifest.json') }}">
 </head>
 <body>
 
@@ -286,7 +290,16 @@
 
     </div>
   </footer>
-  <script src="./js/main.js"></script>
+  <script>
+    window.onload = () => {
+  "use strict";
+
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker.register("/sw.js");
+  }
+};
+
+  </script>
 
 <script src="../assets/js/jquery-3.5.1.min.js"></script>
 

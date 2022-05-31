@@ -36,7 +36,7 @@
     <div class="responders-main">
         <img src="./images/3855168.jpg" alt="">
 
-        <h4>Ambulance And Responders Are On The Way</h4>
+        <h4>Ambulance And Responders will be On The Way</h4>
         
         <p>Speak Carfully To The Person Until The Paramedicals Arrive, Responders Are On The Way </p>
 
@@ -46,7 +46,7 @@
             <input type="text" name="timedate" hidden>
             <input id="long" type="text" name="longitude" hidden>
             <input id="lat" type="text" name="latitude" hidden>
-                <button type="submit" class="button1 button-custom">track responders</button>
+                <button type="submit" class="button1 button-custom">Proceed request</button>
         </form>
             <a href="home">
                 <button class="button2">cancel request</button>

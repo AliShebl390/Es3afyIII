@@ -45,36 +45,29 @@
   </head>
   <body style="background-color: #eee">
     <div class="burger-menu-container" id="lines-container">
-      <div class="line line1" id="bar1"></div>
-      <div class="line line2" id="bar2"></div>
-      <div class="line line3" id="bar3"></div>
-    </div>
-    <div class="nav">
-      <ol>
-        <a href="completed-requests">history</a>
-        <a href="contact-us">contact us</a>
-        <a class="dropdown-item" href="{{ route('paramedic.logout') }}"
-        onclick="event.preventDefault();
-                     document.getElementById('logout-form').submit();">
-         {{ __('Logout') }}
-     </a>
-
-     <form id="logout-form" action="{{ route('paramedic.logout') }}" method="POST" class="d-none">
-         @csrf
-     </form>      
+      <a class="dropdown-item" href="{{ route('paramedic.logout') }}"
+      onclick="event.preventDefault();
+                   document.getElementById('logout-form').submit();">
+                               <i style="font-size: 35px; color:var(--dark)" class="fas fa-sign-out-alt"></i>
+   </a>
+  
+   <form id="logout-form" action="{{ route('paramedic.logout') }}" method="POST" class="d-none">
+       @csrf
+   </form>      
+      
     </div>
 
     <div class="background"></div>
 
-    <div class="paramedic-home-header"  style="justify-content: flex-end; background-color: #eee">
+    <div class="paramedic-home-header"  style="position: relative; justify-content: flex-end; background-color: #eee">
       <a href="profile">
         <img class="paramedic-img" src="/images/usersimgs/{{Auth::guard('paramedic')->user()->image}}" alt="" />
       </a>
     </div>
-    <div style="height: 75%" id="map"></div>
-
+    {{-- <div style="height: 75%" id="map"></div> --}}
+    <h1 style="text-align: center; color:var(--dark);margin-bottom: 15px; margin-top: 10px">Your Requests!</h1>
     @foreach ($reqs as $onereq)
-    <div class="request-section" style="height: 25vh; position: relative;">
+    <div class="request-section" style="position: relative; background-color: #eee">
       <div class="request-section1">
         <img class="user-img" src="/images/usersimgs/{{$onereq->userimage}}" alt="" />
         <div class="">
@@ -85,7 +78,7 @@
       <div class="request-section3">
             
         <a href="after-paramedic-accept-request/{{$onereq->userid}}/{{$onereq->id}}">
-          <button style="cursor: pointer; width:250px;" class="accept-button">Accept</button>
+          <button style="cursor: pointer; width:250px; font-weight: bold" class="accept-button">Accept</button>
         </a>
       </div>
     </div>
@@ -98,12 +91,30 @@
       zoom: 15,
       panControl: true,
     });
-    var markercenter = new google.maps.LatLng(30.0592099,31.3074362);
     var marker = new google.maps.Marker({
+      var markercenter = new google.maps.LatLng(30.0592099,31.3074362);
       position:markercenter,
     });
     marker.setMap(map);
 }
+
+const lat = document.getElementById("lat");
+const long = document.getElementById("long");
+function getLocation() {
+    if (navigator.geolocation) {
+        navigator.geolocation.getCurrentPosition(showPosition);
+    } else { 
+        console.log('error')
+    }
+}
+
+function showPosition(position) {
+console.log( "Latitude: " + position.coords.latitude + 
+"<br>Longitude: " + position.coords.longitude);
+lat.value = position.coords.latitude;
+long.value = position.coords.longitude;
+}
+getLocation();
 </script>  
 <script 
   src="https://maps.googleapis.com/maps/api/js?AIzaSyB0GIMWRrw47lHDp8WX1W9_g-3b3-r6xs8&callback=initMap">
@@ -148,6 +159,9 @@ burgerMenuOverlay.addEventListener("click", function () {
   nav.classList.remove("nav-display");
   background.classList.remove("background-display");
 });
+
+    </script>
+    <script>
 
     </script>
   </body>

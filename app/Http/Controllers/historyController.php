@@ -99,8 +99,8 @@ class historyController extends Controller
         ->select('history.*', 'users.name as username', 'users.image as userimage')
         ->where('paramidicid',null)
         ->get();
-        // return view('home', compact('reqs'));
-        dd($reqs);
+        return view('home', compact('reqs'));
+        // dd($reqs);
     }
 
     /**

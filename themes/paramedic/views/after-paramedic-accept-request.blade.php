@@ -53,11 +53,11 @@
       
       <div class="request-section1">
         <img class="user-img" src="/images/usersimgs/{{$user->image}}" alt="" />
-        <a href="https://www.google.com/maps/dir//{{$user_loaction['latitude']}},{{$user_loaction['longitude']}}">Go To Direction</a>
         <div class="">
           <h2>{{$user->name}}</h2>
           <a style="margin-top: 10px; display: block; color: var(--light)" href="http://es3afyiii.test/paramedic/current-user-medical-history">View medical history</a>
         </div>
+        <a href="https://www.google.com/maps/dir//{{$user_loaction['latitude']}},{{$user_loaction['longitude']}}"><i class="fas fa-directions" style="font-size: 2.5rem;color:rgba(142, 4, 4, 0.884)"></i></a>
       </div>
 
       <div class="request-section2">
@@ -67,8 +67,8 @@
             Age: {{$user->age}}
           </p>
           <p style="margin-bottom: 7px;">
-            Phone Number: {{$user->phonenumber}}
-            <a style="color: rgb(40, 120, 181)" href="tel:{{$user->phonenumber}}"><i style="margin-left: 5px; font-size: 25px" class="fas fa-phone"></i></a>
+            Phone Number: {{$user->phonenum}}
+            <a style="color: rgb(40, 120, 181)" href="tel:{{$user->phonenum}}"><i style="margin-left: 5px; font-size: 25px" class="fas fa-phone-alt"></i></a>
           </p>
           <p style="text-transform: capitalize ;margin-bottom: 7px">
             Gender: {{$user->gender}}

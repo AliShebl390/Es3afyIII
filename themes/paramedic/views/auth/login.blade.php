@@ -193,7 +193,10 @@
                     
                     <div class="form-group row">
                         <div class="col-md-6 offset-md-4">
-                            <div class="form-check">
+                            <div class="form-check" style="display: flex;
+                            justify-content: center;
+                            align-items: center;
+                            gap: 5px;">
                                 <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
                                 
                                 <label style="color: #eee" class="form-check-label" for="remember">
