@@ -11,6 +11,10 @@
       integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
       crossorigin="anonymous"
     />
+    <script
+      src="https://kit.fontawesome.com/869711923d.js"
+      crossorigin="anonymous"
+    ></script>
     <!-- Font -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -34,85 +38,48 @@
   <body>
     <div class="mh-container">
       <div class="mh-header">
-        <a href="home">
-          <i style="font-size: 32px;" class="fas fa-arrow-alt-left"></i>
-        </a>
         <h1><span class="header-span">Me</span>dical history</h1>
       </div>
-      <div class="mh-main" style="padding-bottom: 15px">
+      <div class="mh-main">
         <div class="section-1">
           <img src="/images/doctor.png" alt="" />
           <span>surgeries</span>
-          <div
-            style="display: flex; flex-direction: column; gap: 15px"
-            class=""
-          >
-            <p style="padding-top: 5px">example</p>
-            <p>example</p>
-            <p>example</p>
-            <p>example</p>
-            <p>example</p>
+          @foreach ($medicalhistory->surgeries as $surgery)
+          <div style="display: flex; flex-direction: column; gap: 15px">
+            <p style="padding-top: 20px">{{$surgery}}</p>
           </div>
+          @endforeach
         </div>
 
         <div class="section-1">
           <img src="/images/head.png" alt="" />
           <span>Allerrgies</span>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              margin-top: 20px;
-              gap: 15px;
-            "
-            class=""
-          >
-            <p style="padding-top: 5px">example</p>
-            <p>example</p>
-            <p>example</p>
-            <p>example</p>
-            <p>example</p>
+          @foreach ($medicalhistory->allergies as $allergies)
+          <div style="display: flex; flex-direction: column; gap: 15px">
+              <p style="padding-top: 20px">{{$allergies}}</p>
+            </div>
+            @endforeach
           </div>
-        </div>
+  
 
         <div class="section-1">
           <img src="/images/disease.png" alt="" />
           <span>Chronic disease</span>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              margin-top: 20px;
-              gap: 15px;
-            "
-            class=""
-          >
-            <p style="padding-top: 5px">example</p>
-            <p>example</p>
-            <p>example</p>
-            <p>example</p>
-            <p>example</p>
-          </div>
+          @foreach ($medicalhistory->chronic_disease as $chronic_disease)
+          <div style="display: flex; flex-direction: column; gap: 15px">
+              <p style="padding-top: 20px">{{$chronic_disease}}</p>
+            </div>
+            @endforeach
         </div>
 
         <div class="section-1">
           <img src="/images/Medication.png" alt="" />
           <span>Medication</span>
-          <div
-            style="
-              display: flex;
-              flex-direction: column;
-              margin-top: 20px;
-              gap: 15px;
-            "
-            class=""
-          >
-            <p style="padding-top: 5px">example</p>
-            <p>example</p>
-            <p>example</p>
-            <p>example</p>
-            <p>example</p>
-          </div>
+          @foreach ($medicalhistory->medications as $medications)
+          <div style="display: flex; flex-direction: column; gap: 15px">
+              <p style="padding-top: 20px">{{$medications}}</p>
+            </div>
+            @endforeach
         </div>
       </div>
     </div>

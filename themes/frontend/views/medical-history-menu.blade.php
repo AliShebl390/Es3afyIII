@@ -35,7 +35,7 @@
         <div class="section-1">
           <img src="/images/doctor.png" alt="" />
             <label for="surgeries">surgeries</label>
-            <select name="surgeries[]" id="surgeries" multiple>
+            <select name="surgeries[]" id="surgeries" multiple required>
               <option value="a">a</option>
               <option value="b">b</option>
               <option value="c">c</option>
@@ -50,7 +50,7 @@
         <div class="section-1">
           <img src="/images/head.png" alt="" />
             <label for="allergies">Allerrgies</label>
-            <select name="allergies[]" id="allergies" multiple>
+            <select name="allergies[]" id="allergies" multiple required>
               <option value="a">a</option>
               <option value="b">b</option>
               <option value="c">c</option>
@@ -65,7 +65,7 @@
         <div class="section-1">
           <img src="/images/disease.png" alt="" />
             <label for="chronic disease">Chronic disease</label>
-            <select name="chronic_disease[]" id="chronic disease" multiple>
+            <select name="chronic_disease[]" id="chronic disease" multiple required>
               <option value="a">a</option>
               <option value="b">b</option>
               <option value="c">c</option>
@@ -80,7 +80,7 @@
         <div class="section-1">
           <img src="/images/Medication.png" alt=""/>
             <label for="medications" style="margin-top: 12px">Medications</label>
-            <select name="medications[]" id="medications" multiple>
+            <select name="medications[]" id="medications" multiple required>
               <option value="a">a</option>
               <option value="b">b</option>
               <option value="c">c</option>

@@ -52,10 +52,10 @@
       <!--view user medical history when accept -->
       
       <div class="request-section1">
-        <img class="user-img" src="/images/usersimgs/{{$user->image}}" alt="" />
+        <img class="user-img" src="/images/usersimgs/{{$user->image}}" alt=""/>
         <div class="">
           <h2>{{$user->name}}</h2>
-          <a style="margin-top: 10px; display: block; color: var(--light)" href="http://es3afyiii.test/paramedic/current-user-medical-history">View medical history</a>
+          <a style="margin-top: 10px; display: block; color: var(--light)" href="http://es3afyiii.test/paramedic/current-user-medical-history/{{$user->id}}">View medical history</a>
         </div>
         <a href="https://www.google.com/maps/dir//{{$user_loaction['latitude']}},{{$user_loaction['longitude']}}"><i class="fas fa-directions" style="font-size: 2.5rem;color:rgba(142, 4, 4, 0.884)"></i></a>
       </div>
@@ -98,10 +98,9 @@
           position:markercenter,
         });
         marker.setMap(map);
-    }
-      </script>  
-      <script async
-        src="https://maps.googleapis.com/maps/api/js?AIzaSyB0GIMWRrw47lHDp8WX1W9_g-3b3-r6xs8&callback=initMap">
+      }
+  </script>  
+      <script async src="https://maps.googleapis.com/maps/api/js?AIzaSyB0GIMWRrw47lHDp8WX1W9_g-3b3-r6xs8&callback=initMap">
     </script>
     <script src="/js/paramedic.js"></script>
   </body>

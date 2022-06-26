@@ -13,9 +13,14 @@ class medicalhistoryController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index($id)
     {
-        //
+        $medicalhistory = medicalhistory::Where('userid',$id)->first();
+        $medicalhistory->surgeries =json_decode($medicalhistory->surgeries);
+        $medicalhistory->allergies =json_decode($medicalhistory->allergies);
+        $medicalhistory->chronic_disease =json_decode($medicalhistory->chronic_disease);
+        $medicalhistory->medications =json_decode($medicalhistory->medications);
+        return view('current-user-medical-history',compact('medicalhistory'));
     }
 
     /**

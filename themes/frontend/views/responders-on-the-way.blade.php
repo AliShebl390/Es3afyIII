@@ -38,12 +38,13 @@
 
         <h4>Ambulance And Responders will be On The Way</h4>
         
+        <p>Please give us permission to track your current location</p>
         <p>Speak Carfully To The Person Until The Paramedicals Arrive, Responders Are On The Way </p>
 
         <form method="post" action="{{url('request')}}">
             @csrf   
             <input type="text" name="userId" hidden>
-            <input type="text" name="timedate" hidden>
+            <input type="text" name="timedate" value="{{date('Y-m-d', time())}}" hidden>
             <input id="long" type="text" name="longitude" hidden>
             <input id="lat" type="text" name="latitude" hidden>
                 <button type="submit" class="button1 button-custom">Proceed request</button>

@@ -4,6 +4,7 @@ use App\Http\Controllers\Paramedic\P_AuthController;
 use App\Http\Controllers\userscontroller;
 use App\Http\Controllers\historyController;
 use App\Http\Controllers\getController;
+use App\Http\Controllers\medicalhistoryController;
 use Illuminate\Support\Facades\Route;
 
 Route::prefix('paramedic')->middleware('theme:paramedic')->name('paramedic.')->group(function () {
@@ -24,12 +25,9 @@ Route::prefix('paramedic')->middleware('theme:paramedic')->name('paramedic.')->g
         Route::get('/current-user-medical-history', function () {
             return view('/current-user-medical-history');
         });
-
-        // Route::get('/after-paramedic-accept-request', function () {
-        //     return view('/after-paramedic-accept-request');
-        // });
-        // route::get('/after-paramedic-accept-request/{id}/{historyID}',[usersController::class,'destroy']);
         
+        Route::get('/current-user-medical-history/{id}',[medicalhistoryController ::class,'index']);
+
         Route::get('/profile', [P_AuthController::class,'showpara']);
         Route::post('/update', [P_AuthController::class,'update']);
 

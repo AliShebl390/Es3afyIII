@@ -103,9 +103,6 @@ Route::get('/home',[soscontactsController::class,'showSos']);
 Route::get('/success', function () {
     return view('success');
 });
-// Route::get('/tracking', function () {
-//     return view('tracking');
-// });
 route::get('/tracking/{id}',[P_AuthController::class,'index_para_user']);
 route::get('/respondersOnTheWay/{id}',[usersController::class,'tracking']);
 
@@ -140,6 +137,3 @@ Route::get('/pass', function () {
 require __DIR__.'/auth.php';
 require __DIR__.'/admin.php';
 require __DIR__.'/paramedic.php';
-
-
-// Route::get('/firbase/{id}/{historyID}', [userscontroller::class,'firbase']);

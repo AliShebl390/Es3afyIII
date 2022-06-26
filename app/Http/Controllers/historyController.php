@@ -49,17 +49,11 @@ class historyController extends Controller
         $req = new history ;
         $req->userId =Auth::user()->id;
         $req->longitude =$request->longitude;
-        $req->latitude	 =$request->latitude;
-        // $req->timedate =date('Y-m-d H:i:s')->timedate;
+        $req->latitude =$request->latitude;
+        $req->timedate =$request->timedate;
         $req->save();
         return redirect('/arrived');
     }
-    // public function tracking($id)
-    // {
-    //     $contact=soscontacts::find($id);
-    //     $contact->delete();
-    //     return redirect('sos-contacts');    
-    // }
     /**
      * Store a newly created resource in storage.
      *
@@ -130,5 +124,4 @@ class historyController extends Controller
     {
         //
     }
-   
 }
