@@ -20,19 +20,7 @@ class userscontroller extends Controller
         $allUsers = User::join('_nationalid', '_nationalid.userid','=','users.id')
         ->select('users.*','_nationalid.front as NIDfront','_nationalid.back as NIDback','_nationalid.selfie as NIDselfie')->get();
         return view('/user',compact('allUsers'));
-
-        // $allUsers = User::get();
-        // return view('/user', compact('allUsers'));
     }
-
-
-
-    // public function index_para_home($id)
-    // {
-    //     $user = User::find($id);
-    //     return view('paramedic/Home', compact('user'));
-    // }
-
     /**
      * Show the form for creating a new resource.
      *
@@ -46,18 +34,7 @@ class userscontroller extends Controller
      */
     public function store(Request $request)
     {
-        // $user = new User ;
-        // $user->name =$request->name;
-        // $user->email =$request->email;
-        // $user->password =$request->password;
-        // $user->gender =$request->gender;
-        // $user->age =$request->birthday;
-        // $user->phonenum =$request->phonenum;
-        // $user->bloodType =$request->bloodType;
-        // $user->weight =$request->weight;
-        // $user->height =$request->height;
-        // $user->save();
-        // return redirect('/medical-history');
+        
     }
 
     /**
