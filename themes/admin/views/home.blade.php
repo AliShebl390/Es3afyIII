@@ -91,7 +91,7 @@
           <main>
             <h5>id <span>{{$oneParamedical->id}}</span></h5>
 
-            <h5>mobile <span>{{$oneParamedical->phonenum}}</span></h5>
+            <h5>mobile <span>{{$oneParamedical->phonenumber}}</span></h5>
 
             <h5>email <span>{{$oneParamedical->email}}</span></h5>
 

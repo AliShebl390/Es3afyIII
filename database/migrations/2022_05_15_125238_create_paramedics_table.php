@@ -21,7 +21,6 @@ class CreateParamedicsTable extends Migration
             $table->string('phonenumber')->nullable();
             $table->string('image')->nullable();
             $table->timestamp('email_verified_at')->nullable();
-            $table->enum('status', ['active', 'inactive']);
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
