@@ -17,7 +17,6 @@ class CreateHistoryTable extends Migration
             $table->id();
             $table->unsignedBigInteger('userid')->nullable();
             $table->unsignedBigInteger('paramidicid')->nullable();
-            $table-> datetime('timedate')->nullable();
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();
             $table->string('feedback')->nullable();

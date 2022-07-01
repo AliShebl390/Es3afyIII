@@ -23,7 +23,7 @@ class historyController extends Controller
         $All_history = DB::table('history')
         ->join('paramedics','paramedics.id', "=" , 'history.paramidicid')
         ->join('users','users.id', "=" , 'history.userid')
-        ->select('history.*', 'users.name as username', 'users.image as userimage', 'paramedics.name as paraname')
+        ->select('history.*', 'users.name as username', 'users.image as userimage', 'paramedics.name as paraname', 'paramedics.email as paraemail')
         ->get();
         return view('/History-main',compact('All_history'));
     }
@@ -50,7 +50,6 @@ class historyController extends Controller
         $req->userId =Auth::user()->id;
         $req->longitude =$request->longitude;
         $req->latitude =$request->latitude;
-        $req->timedate =$request->timedate;
         $req->save();
         return redirect('/arrived');
     }

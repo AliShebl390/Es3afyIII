@@ -68,14 +68,14 @@
       <div class="history-main">
         @foreach($All_history as $onehistory)
         <div class="rides-history-section" style="cursor: default">
-          <div style=" display: flex; align-items: flex-start justify-content: center; text-align: center; position: relative; flex-direction: column;" class="rides-section1">
-            <p><i style="font-size: 18px" class="fas fa-calendar-alt"></i> {{$onehistory->timedate}}</p>
-            <span style="margin-top: 5px">Made by: {{$onehistory->paraname}}             <img style="width: 35px;height: 35px; border-radius: 20%; margin-left: 10px" src="/images/usersimgs/{{$onehistory->userimage}}" alt="" />
+          <div style="height: 110px; ; display: flex; align-items: flex-start justify-content: center; text-align: center; position: relative; flex-direction: column;" class="rides-section1">
+            <p><i style="font-size: 18px" class="fas fa-calendar-alt"></i> {{$onehistory->created_at}}</p>
+            <span style="margin-top: 25px">Made by: {{$onehistory->paraname}}             <img style="width: 50px;height: 50px; border-radius: 20%; margin-left: 10px" src="/images/usersimgs/{{$onehistory->userimage}}" alt="" />
           </span>
           </div>
           <hr />
           <div class="rides-section2">
-            <img src="/images/usersimgs/{{$onehistory->userimage}}" alt="" />
+            <img src="/images/usersimgs/{{$onehistory->userimage}}" alt="" style="object-fit: contain"/>
             <div class="rides-adjust">
               <h4>{{$onehistory->username}}</h4>
               <i class="fas fa-star"><span>{{$onehistory->Rate}}</span></i>
@@ -93,11 +93,13 @@
           </div>
           <hr />
           <div class="rides-section3">
-            <h5>Trip details:</h5>
-            <i style="display: flex; gap: 10px" class="fas fa-location">
-              <span>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Molestiae voluptas enim accu</span></i>
+            <P style="margin: 20px;
+            display: grid;
+            place-items: center;">    
+               <a style="cursor: pointer; font-size: 20px; color: #00adb5" href = "mailto: {{$onehistory->paraemail}}">
+                <i style="font-size: 25px" class="fas fa-envelope"></i>
+                Contact User</a>
+            </P>
           </div>
         </div>
         @endforeach

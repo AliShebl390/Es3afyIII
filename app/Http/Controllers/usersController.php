@@ -113,4 +113,12 @@ class userscontroller extends Controller
 
             return view('/after-paramedic-accept-request', compact('user','user_loaction'));
         }
+
+        public function delete($id)
+    {
+        $oneParamedical = User::find($id);
+        $oneParamedical->delete();
+        return redirect('admin/user');
+    }
+
 }

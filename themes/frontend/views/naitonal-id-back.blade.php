@@ -44,7 +44,7 @@
         <a href="naitonal-id-back">
           <button class="button-custom"><span>Back</span></button>
         </a>
-        <a href="national-id-selfie">
+        <a href="#">
           <button class="button-custom">Selfie</button>
         </a>
       </div>

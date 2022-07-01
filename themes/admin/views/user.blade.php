@@ -76,6 +76,11 @@
         <aside>
           <header>
             <h2>{{$user->name}}</h2>    
+            <div class="deleteee-user">
+              <a href={{"delete/".$user['id']}}>
+                <i class="fas fa-trash"></i>
+              </a>
+            </div>
           </header>
           <main>
               <h5>Mobile <span>{{$user->phonenum}}</span> </h5>

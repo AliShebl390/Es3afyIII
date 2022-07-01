@@ -42,10 +42,10 @@
         <a href="national-id-front">
           <button class="button-custom"><span>Front</span></button>
         </a>
-        <a href="naitonal-id-back">
+        <a href="#">
           <button class="button-custom">Back</button>
         </a>
-        <a href="national-id-selfie">
+        <a href="#">
           <button class="button-custom">Selfie</button>
         </a>
       </div>

@@ -2,8 +2,8 @@
 
 use App\Http\Controllers\Admin\A_AuthController;
 use App\Http\Controllers\getController;
-use App\Http\Controllers\userscontroller;
-use App\Http\Controllers\historycontroller;
+use App\Http\Controllers\usersController;
+use App\Http\Controllers\historyController;
 use App\Http\Controllers\Paramedic\P_AuthController;
 use Illuminate\Support\Facades\Route;
 
@@ -36,10 +36,11 @@ Route::prefix('admin')->middleware('theme:admin')->name('admin.')->group(functio
         route::get('/home',[P_AuthController::class,'index']);
         // route::get('/login',[P_AuthController::class,'index']);
         Route::get('/delete/{id}',[P_AuthController::class,'delete']);
+        Route::get('/delete/{id}',[usersController::class,'delete']);
 
-        route::get('/user',[userscontroller::class,'index']);
+        route::get('/user',[usersController::class,'index']);
 
-        Route::get('/History-main',[historycontroller::class,'index']);
+        Route::get('/History-main',[historyController::class,'index']);
     });
 });
 

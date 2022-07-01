@@ -2,8 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Paramedic\P_AuthController;
-use App\Http\Controllers\historycontroller;
-use App\Http\Controllers\userscontroller;
+use App\Http\Controllers\historyController;
+use App\Http\Controllers\usersController;
 use App\Http\Controllers\medicalhistoryController;
 use App\Http\Controllers\soscontactsController;
 use App\Http\Controllers\ratethetripController;
@@ -87,9 +87,9 @@ Route::get('/rating/{id}', [historyController::class,'show_rate']);
 
 Route::post('rateStore', [historyController::class,'store']);
 
-Route::get('/req-comp-for-user',[historycontroller::class,'index_medical']);
+Route::get('/req-comp-for-user',[historyController::class,'index_medical']);
 
-Route::get('/req-details/{id}', [historycontroller::class,'show']);
+Route::get('/req-details/{id}', [historyController::class,'show']);
 
 // End Ratin
 
@@ -123,7 +123,7 @@ Route::get('/arrived', function () {
     return view('arrived-copy');
 });
 
-Route::get('/req-details/{id}', [historycontroller::class,'show']);
+Route::get('/req-details/{id}', [historyController::class,'show']);
 
 Route::get('/index', function () {
     return view('index');

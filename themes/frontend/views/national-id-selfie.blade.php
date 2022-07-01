@@ -34,7 +34,7 @@
   </head>
   <body>
     <div class="n-id-container">
-      <a href="medical-history">
+      <a href="national-id-back">
         <i class="fas fa-arrow-alt-left go-back"></i>
       </a>
       <div class="n-id-header">
@@ -64,7 +64,7 @@
           <div class="bt1">
             <form method="post" enctype="multipart/form-data" action="{{url('store_selfie')}}">
               @csrf 
-           <input type="file" id="file-id" name="selfie"/>
+           <input type="file" id="file-id" name="selfie" required/>
           <label for="file-id" id="upload-btn-id"> choose file </label>
           </div>
           <div class="bt2">
